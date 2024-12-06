@@ -4,25 +4,13 @@ from poke_env.player import Player
 from poke_env.environment import AbstractBattle
 import asyncio
 
-def calculate_and_print_damage(opponent_prev_hp, opponent_current_hp, max_hp, turn, pokemon_name):
-    """
-    Calculates and prints the damage done to the opponent Pokémon.
-    """
-    if opponent_prev_hp is not None and opponent_current_hp is not None:
-        damage = opponent_prev_hp - opponent_current_hp
-        damage_percentage = (damage / max_hp) * 100 if max_hp else 0
-        print(
-            f"Turn {turn}: Damage dealt to {pokemon_name} - "
-            f"{damage} HP ({damage_percentage:.2f}%)"
-        )
-    else:
-        print(f"Turn {turn}: Could not calculate damage (missing HP values).")
-
 
 class CustomPlayer(Player):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.opponent_prev_hp = None
+        self.battle_log = []  # To store the battle events
+        self.last_move_used = None  # Track the last move used
 
     async def choose_move(self, battle: AbstractBattle):
         # Print the team at the start of the battle (only on the first move)
@@ -33,6 +21,7 @@ class CustomPlayer(Player):
 
         # Monitor opposing Pokémon's HP
         opposing_pokemon = battle.opponent_active_pokemon
+        my_pokemon = battle.active_pokemon
         if opposing_pokemon:
             print(
                 f"\nTurn {battle.turn}: Before move - Opposing Pokémon "
@@ -40,22 +29,37 @@ class CustomPlayer(Player):
                 f"({(opposing_pokemon.current_hp / opposing_pokemon.max_hp) * 100:.2f}%)"
             )
 
-            # Calculate and print the damage done on the previous turn
-            if battle.turn > 1:  # No damage to calculate on the first turn
-                calculate_and_print_damage(
-                    self.opponent_prev_hp,
-                    opposing_pokemon.current_hp,
-                    opposing_pokemon.max_hp,
-                    battle.turn - 1,
-                    opposing_pokemon.species,
-                )
+            # Log the damage done on the previous turn
+            if battle.turn > 1 and self.opponent_prev_hp is not None:
+                damage = self.opponent_prev_hp - opposing_pokemon.current_hp
+                damage_percentage = (damage / opposing_pokemon.max_hp) * 100 if opposing_pokemon.max_hp else 0
+
+                # Append the event to the battle log
+                self.battle_log.append({
+                    "turn": battle.turn - 1,
+                    "attacking_pokemon": my_pokemon.species if my_pokemon else "Unknown",
+                    "move_used": self.last_move_used if self.last_move_used else "Unknown",
+                    "opposing_pokemon": opposing_pokemon.species,
+                    "damage": damage,
+                    "damage_percentage": round(damage_percentage, 2),
+                })
+
+                # print(
+                #     f"Turn {battle.turn - 1}: {my_pokemon.species} used {self.last_move_used} on {opposing_pokemon.species} - "
+                #     f"{damage} HP ({damage_percentage:.2f}%) damage dealt."
+                # )
 
             # Store the current HP for the next turn's calculation
             self.opponent_prev_hp = opposing_pokemon.current_hp
 
-        # Choose a random move for simplicity
+        # Choose a random move
         move = self.choose_random_move(battle)
-        print(f"{self.__class__.__name__} selected move: {move.order}")
+        # print('move\n\n\n\n\n\n\n\n\n', move.vars())
+        # for value in vars(move.order).items():
+        #     print(f"\n\n\n\n\n\n\n\n\n{value}")
+        print("move order", move.order, type(move.order), move.order)
+        self.last_move_used = move.order if move.order else "Struggle"  # Track the last move used
+        print(f"{self.__class__.__name__} selected move: {self.last_move_used}")
         return move
 
 
@@ -85,6 +89,9 @@ player2 = MaxDamagePlayer(
 async def main():
     await player1.battle_against(player2, n_battles=1)
     print(f"\nPlayer 1's win rate: {player1.n_won_battles}")
+    print("\nBattle Log:")
+    for event in player1.battle_log:
+        print(event)
 
 
 # Run the script
