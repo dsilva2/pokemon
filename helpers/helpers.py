@@ -11,6 +11,82 @@ alpha = 0.1  # Learning rate
 gamma = 0.9  # Discount factor
 epsilon = 0.1  # Exploration rate
 
+# Type effectiveness chart
+# Full Pokémon type effectiveness chart
+# type_effectiveness = {
+#     "Normal": {
+#         "Rock": 0.5, "Ghost": 0, "Steel": 0.5
+#     },
+#     "Fire": {
+#         "Grass": 2, "Ice": 2, "Bug": 2, "Steel": 2,
+#         "Fire": 0.5, "Water": 0.5, "Rock": 0.5, "Dragon": 0.5
+#     },
+#     "Water": {
+#         "Fire": 2, "Ground": 2, "Rock": 2,
+#         "Water": 0.5, "Grass": 0.5, "Dragon": 0.5
+#     },
+#     "Electric": {
+#         "Water": 2, "Flying": 2,
+#         "Electric": 0.5, "Grass": 0.5, "Ground": 0
+#     },
+#     "Grass": {
+#         "Water": 2, "Ground": 2, "Rock": 2,
+#         "Fire": 0.5, "Grass": 0.5, "Poison": 0.5, "Flying": 0.5, "Bug": 0.5, "Dragon": 0.5, "Steel": 0.5
+#     },
+#     "Ice": {
+#         "Grass": 2, "Ground": 2, "Flying": 2, "Dragon": 2,
+#         "Fire": 0.5, "Water": 0.5, "Ice": 0.5, "Steel": 0.5
+#     },
+#     "Fighting": {
+#         "Normal": 2, "Ice": 2, "Rock": 2, "Dark": 2, "Steel": 2,
+#         "Poison": 0.5, "Flying": 0.5, "Psychic": 0.5, "Bug": 0.5, "Fairy": 0.5, "Ghost": 0
+#     },
+#     "Poison": {
+#         "Grass": 2, "Fairy": 2,
+#         "Poison": 0.5, "Ground": 0.5, "Rock": 0.5, "Ghost": 0.5, "Steel": 0
+#     },
+#     "Ground": {
+#         "Fire": 2, "Electric": 2, "Poison": 2, "Rock": 2, "Steel": 2,
+#         "Grass": 0.5, "Bug": 0.5, "Flying": 0
+#     },
+#     "Flying": {
+#         "Grass": 2, "Fighting": 2, "Bug": 2,
+#         "Electric": 0.5, "Rock": 0.5, "Steel": 0.5
+#     },
+#     "Psychic": {
+#         "Fighting": 2, "Poison": 2,
+#         "Psychic": 0.5, "Steel": 0.5, "Dark": 0
+#     },
+#     "Bug": {
+#         "Grass": 2, "Psychic": 2, "Dark": 2,
+#         "Fire": 0.5, "Fighting": 0.5, "Poison": 0.5, "Flying": 0.5, "Ghost": 0.5, "Steel": 0.5, "Fairy": 0.5
+#     },
+#     "Rock": {
+#         "Fire": 2, "Ice": 2, "Flying": 2, "Bug": 2,
+#         "Fighting": 0.5, "Ground": 0.5, "Steel": 0.5
+#     },
+#     "Ghost": {
+#         "Psychic": 2, "Ghost": 2,
+#         "Dark": 0.5, "Normal": 0
+#     },
+#     "Dragon": {
+#         "Dragon": 2,
+#         "Steel": 0.5, "Fairy": 0
+#     },
+#     "Dark": {
+#         "Psychic": 2, "Ghost": 2,
+#         "Fighting": 0.5, "Dark": 0.5, "Fairy": 0.5
+#     },
+#     "Steel": {
+#         "Ice": 2, "Rock": 2, "Fairy": 2,
+#         "Fire": 0.5, "Water": 0.5, "Electric": 0.5, "Steel": 0.5
+#     },
+#     "Fairy": {
+#         "Fighting": 2, "Dragon": 2, "Dark": 2,
+#         "Fire": 0.5, "Poison": 0.5, "Steel": 0.5
+#     },
+# }
+
 
 def save_q_table(q_table, file_path="q_table.txt"):
     """Save the Q-table to a file."""
@@ -39,12 +115,27 @@ def get_action_space(battle):
     return actions
 
 
-def choose_action(state, action_space):
-    """Choose an action using ε-greedy policy."""
+def choose_action(state, action_space, battle):
+    """Choose an action using ε-greedy policy, considering type effectiveness."""
     if random.uniform(0, 1) < epsilon:  # Exploration
         return random.choice(action_space)
     else:  # Exploitation
-        return max(action_space, key=lambda a: q_table.get((state, a), default_q_value))
+        # Get Q-values adjusted by type effectiveness
+        q_values = []
+        for action in action_space:
+            if action[0] == "move":
+                move = next(m for m in battle.available_moves if m.id == action[1])
+                active_type = move.type
+                opponent_type = battle.opponent_active_pokemon.types[0] if battle.opponent_active_pokemon else "None"
+            #     type_multiplier = type_effectiveness.get(active_type, {}).get(opponent_type, 1)
+            # else:
+            #     type_multiplier = 1  # No multiplier for switches
+
+            q_value = q_table.get((state, action), default_q_value)
+            q_values.append((action, q_value))
+
+        # Select action with the highest adjusted Q-value
+        return max(q_values, key=lambda x: x[1])[0]
 
 
 def update_q_table(state, action, reward, next_state, next_action_space):
@@ -57,17 +148,17 @@ def update_q_table(state, action, reward, next_state, next_action_space):
 def calculate_reward(my_hp_before, my_hp_after, opponent_hp_before, opponent_hp_after, battle):
     """
     Calculate the reward based on the reward structure:
-    - Winning: +30
-    - Losing: -30
-    - Opponent Pokémon fainted: +1
+    - Winning: +100
+    - Losing: -100
+    - Opponent Pokémon fainted: +10
     - % HP damage to opponent: +% (of HP lost)
     - % HP damage to self: -% (of HP lost)
     """
     # 1. Winning or Losing
     if battle.won:
-        return 30  # Winning
+        return 100  # Winning
     elif battle.lost:
-        return -30  # Losing
+        return -100  # Losing
 
     # 2. HP Percentage Change
     opponent_hp_lost = opponent_hp_before - opponent_hp_after
@@ -80,20 +171,22 @@ def calculate_reward(my_hp_before, my_hp_after, opponent_hp_before, opponent_hp_
 
     # 3. Fainting
     opponent_fainted_reward = 10 if opponent_hp_after == 0 else 0
-    my_fainted_penalty = -10 if my_hp_after == 0 else 0
 
-    # print('oppononent fainted', opponent_fainted_reward, my_fainted_penalty, opponent_hp_loss_percentage, my_hp_loss_percentage)
+    # Type effectiveness multiplier
+    active_type = battle.active_pokemon.types[0] if battle.active_pokemon else "None"
+    opponent_type = battle.opponent_active_pokemon.types[0] if battle.opponent_active_pokemon else "None"
+    # type_multiplier = type_effectiveness.get(active_type, {}).get(opponent_type, 1)
 
-    # Calculate total reward
-    reward = (
-        opponent_fainted_reward +  # Opponent Pokémon fainted
-        -my_fainted_penalty +  # Self fainted penalty
-        opponent_hp_loss_percentage -  # Positive reward for % damage to opponent
-        my_hp_loss_percentage  # Negative penalty for % damage to self
+    # Adjust reward based on type effectiveness
+    # type_effectiveness_bonus = 5 * (type_multiplier - 1)  # Reward for effective moves
+
+    # Total reward
+    return (
+        opponent_hp_loss_percentage -  # Positive reward for damage dealt
+        my_hp_loss_percentage +  # Negative penalty for damage received
+        opponent_fainted_reward   # Bonus for fainting opponent
+        # type_effectiveness_bonus  # Bonus for type effectiveness
     )
-
-    return reward
-
 
 
 class QLearningPlayer(Player):
@@ -105,12 +198,15 @@ class QLearningPlayer(Player):
         self.my_prev_hp = None
 
     def get_state(self, battle):
-        """Create a representation of the current battle state."""
+        """Create a representation of the current battle state, including type effectiveness."""
+        active_type = battle.active_pokemon.types[0] if battle.active_pokemon else "None"
+        opponent_type = battle.opponent_active_pokemon.types[0] if battle.opponent_active_pokemon else "None"
+        # effectiveness = type_effectiveness.get(active_type, {}).get(opponent_type, 1)
+
         return (
             battle.active_pokemon.species,
-            # battle.active_pokemon.current_hp,
             battle.opponent_active_pokemon.species,
-            # battle.opponent_active_pokemon.current_hp,
+            # effectiveness,  # Include type effectiveness
         )
 
     async def choose_move(self, battle):
@@ -122,7 +218,7 @@ class QLearningPlayer(Player):
         action_space = get_action_space(battle)
 
         # Choose an action using ε-greedy policy
-        action = choose_action(state, action_space)
+        action = choose_action(state, action_space, battle)
 
         # Translate the action to an order
         if action[0] == "move":

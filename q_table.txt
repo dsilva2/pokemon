@@ -1,347 +1,348 @@
-(('pikachu', 'roserade'), ('move', 'volttackle')): 4.555472231333245
-(('pikachu', 'roserade'), ('switch', 'venusaur')): 17.059112670522847
-(('venusaur', 'roserade'), ('move', 'sludgebomb')): 6.876319415971416
-(('venusaur', 'roserade'), ('move', 'gigadrain')): 8.89862345410102
-(('venusaur', 'roserade'), ('switch', 'charizard')): 12.930851984976407
-(('charizard', 'roserade'), ('move', 'flareblitz')): 11.57095353399616
-(('charizard', 'lucario'), ('move', 'flareblitz')): 11.582517929125302
-(('charizard', 'spiritomb'), ('move', 'flareblitz')): 10.186993888400739
-(('charizard', 'garchomp'), ('move', 'flareblitz')): 16.149566368859087
-(('charizard', 'garchomp'), ('switch', 'snorlax')): 3.9398348638059417
-(('snorlax', 'garchomp'), ('move', 'shadowball')): -8.724188798433097
-(('snorlax', 'garchomp'), ('move', 'crunch')): -9.625519599444896
-(('snorlax', 'garchomp'), ('switch', 'lapras')): 8.928790640486037
-(('lapras', 'garchomp'), ('move', 'blizzard')): 11.295786518257703
-(('lapras', 'milotic'), ('move', 'blizzard')): 8.631121990606134
-(('lapras', 'milotic'), ('move', 'psychic')): 8.20554775753734
-(('lapras', 'togekiss'), ('move', 'blizzard')): 19.439022630328655
-(('lapras', 'togekiss'), ('switch', 'blastoise')): 19.511372513220902
-(('blastoise', 'togekiss'), ('move', 'focusblast')): 9.035952928617418
-(('blastoise', 'togekiss'), ('move', 'hydrocannon')): 7.915848362214105
-(('blastoise', 'togekiss'), ('move', 'recharge')): 10.347920133713968
-(('lapras', 'lucario'), ('switch', 'venusaur')): 18.205693839945145
-(('venusaur', 'lucario'), ('move', 'sludgebomb')): 8.983887710334955
-(('venusaur', 'lucario'), ('switch', 'snorlax')): 10.334748437230852
-(('snorlax', 'lucario'), ('move', 'shadowball')): 1.108295691222142
-(('snorlax', 'lucario'), ('move', 'crunch')): 1.0340819454725778
-(('snorlax', 'lucario'), ('switch', 'pikachu')): 9.39471190026438
-(('pikachu', 'lucario'), ('move', 'volttackle')): 7.438815449622547
-(('pikachu', 'spiritomb'), ('move', 'volttackle')): 8.80857494125635
-(('pikachu', 'togekiss'), ('move', 'volttackle')): 11.568178247346966
-(('pikachu', 'togekiss'), ('switch', 'lapras')): 21.293518098156653
-(('lapras', 'garchomp'), ('move', 'brine')): 12.1527967085424
-(('lapras', 'garchomp'), ('move', 'psychic')): 11.09157457043707
-(('lapras', 'garchomp'), ('switch', 'blastoise')): 14.905179696357635
-(('blastoise', 'garchomp'), ('move', 'focusblast')): 8.492068547463388
-(('blastoise', 'roserade'), ('move', 'focusblast')): 18.334133509345644
-(('blastoise', 'roserade'), ('switch', 'charizard')): 17.817514104421907
-(('charizard', 'roserade'), ('move', 'airslash')): 11.635715897019745
-(('charizard', 'roserade'), ('move', 'blastburn')): 11.344963099990718
-(('venusaur', 'milotic'), ('move', 'sludgebomb')): 8.035670656266722
-(('venusaur', 'garchomp'), ('move', 'sludgebomb')): 8.236375919941224
-(('venusaur', 'garchomp'), ('switch', 'pikachu')): 17.39586801104341
-(('pikachu', 'garchomp'), ('move', 'volttackle')): 17.572376998835196
-(('pikachu', 'garchomp'), ('switch', 'snorlax')): 15.262733796908696
-(('blastoise', 'garchomp'), ('move', 'hydrocannon')): 7.709102496993198
-(('blastoise', 'garchomp'), ('move', 'recharge')): 8.70527925663022
-(('blastoise', 'garchomp'), ('switch', 'snorlax')): 4.298292322134914
-(('lapras', 'garchomp'), ('switch', 'charizard')): 15.53248396553915
-(('snorlax', 'lucario'), ('switch', 'charizard')): 11.362474345137828
-(('charizard', 'lucario'), ('move', 'airslash')): 13.140805682349672
-(('charizard', 'spiritomb'), ('move', 'airslash')): 10.455004784967631
-(('charizard', 'spiritomb'), ('move', 'blastburn')): 9.940749661501101
-(('venusaur', 'milotic'), ('move', 'gigadrain')): 10.621913566894136
-(('venusaur', 'milotic'), ('move', 'sleeppowder')): 8.326356306085957
-(('charizard', 'roserade'), ('switch', 'venusaur')): 12.15288063262776
-(('venusaur', 'roserade'), ('switch', 'snorlax')): 1.9841222799080132
-(('snorlax', 'roserade'), ('move', 'shadowball')): -9.417781918826156
-(('pikachu', 'lucario'), ('move', 'irontail')): 8.632066969112014
-(('pikachu', 'lucario'), ('switch', 'lapras')): 25.76151155477994
-(('lapras', 'lucario'), ('move', 'blizzard')): 18.192918099552816
-(('lapras', 'lucario'), ('switch', 'blastoise')): 17.927204917088293
-(('blastoise', 'lucario'), ('move', 'focusblast')): 10.98603520713702
-(('venusaur', 'spiritomb'), ('move', 'sludgebomb')): 22.775295034146165
-(('venusaur', 'spiritomb'), ('move', 'gigadrain')): 18.94693525247792
-(('venusaur', 'milotic'), ('switch', 'pikachu')): 5.613044062867083
-(('pikachu', 'milotic'), ('move', 'volttackle')): 6.718990186722697
-(('pikachu', 'roserade'), ('switch', 'blastoise')): 23.649567740100334
-(('lapras', 'garchomp'), ('switch', 'snorlax')): 7.993900779132177
-(('snorlax', 'garchomp'), ('move', 'blizzard')): -9.061531207891528
-(('snorlax', 'lucario'), ('switch', 'blastoise')): 10.459136277521361
-(('blastoise', 'lucario'), ('move', 'hydrocannon')): 11.290163540537945
-(('snorlax', 'garchomp'), ('move', 'gigaimpact')): -8.682049516845634
-(('snorlax', 'lucario'), ('move', 'recharge')): -0.030828612701143177
-(('snorlax', 'lucario'), ('move', 'blizzard')): 1.0718107810855635
-(('blastoise', 'lucario'), ('move', 'blizzard')): 7.990923814464871
-(('blastoise', 'lucario'), ('move', 'flashcannon')): 8.926990906724377
-(('blastoise', 'lucario'), ('switch', 'charizard')): 12.789173926945018
-(('charizard', 'lucario'), ('switch', 'venusaur')): 9.758334169132832
-(('venusaur', 'lucario'), ('switch', 'charizard')): 17.53411449029632
-(('charizard', 'milotic'), ('move', 'flareblitz')): 18.80309641864824
-(('pikachu', 'spiritomb'), ('move', 'irontail')): 8.907402832491252
-(('snorlax', 'garchomp'), ('switch', 'blastoise')): 6.48025800321729
-(('blastoise', 'garchomp'), ('switch', 'pikachu')): 18.470015838996492
-(('pikachu', 'garchomp'), ('move', 'quickattack')): 18.18187203180015
-(('pikachu', 'garchomp'), ('switch', 'charizard')): 25.039609519941155
-(('charizard', 'lucario'), ('move', 'blastburn')): 10.305053060481209
-(('charizard', 'roserade'), ('move', 'recharge')): 15.71905890019325
-(('venusaur', 'togekiss'), ('move', 'sludgebomb')): 8.259124049690389
-(('pikachu', 'garchomp'), ('switch', 'lapras')): 20.23355943152894
-(('snorlax', 'garchomp'), ('switch', 'pikachu')): 14.078383060266157
-(('snorlax', 'garchomp'), ('switch', 'charizard')): 16.280446284910177
-(('charizard', 'spiritomb'), ('move', 'recharge')): 11.805555494592463
-(('charizard', 'roserade'), ('switch', 'blastoise')): 16.25167233826668
-(('charizard', 'togekiss'), ('move', 'flareblitz')): 10.817370129361327
-(('charizard', 'milotic'), ('move', 'airslash')): 18.284140579225078
-(('charizard', 'milotic'), ('switch', 'snorlax')): 9.065104414508125
-(('snorlax', 'milotic'), ('move', 'shadowball')): -8.835280397391578
-(('snorlax', 'milotic'), ('move', 'crunch')): -6.869562862992839
-(('snorlax', 'milotic'), ('switch', 'lapras')): 7.536724527982106
-(('lapras', 'garchomp'), ('switch', 'pikachu')): 17.998625093771942
-(('pikachu', 'garchomp'), ('switch', 'blastoise')): 18.00908193639084
-(('blastoise', 'spiritomb'), ('move', 'recharge')): 9.086863972160934
-(('blastoise', 'spiritomb'), ('move', 'focusblast')): 7.677902838248846
-(('blastoise', 'spiritomb'), ('switch', 'venusaur')): 18.345107296553557
-(('venusaur', 'spiritomb'), ('move', 'sleeppowder')): 18.027544628187012
-(('venusaur', 'spiritomb'), ('move', 'frenzyplant')): 15.049669345832887
-(('venusaur', 'spiritomb'), ('move', 'recharge')): 18.204785933857032
-(('venusaur', 'roserade'), ('move', 'recharge')): 8.272674628319306
-(('blastoise', 'roserade'), ('move', 'recharge')): 20.67428565825345
-(('blastoise', 'lucario'), ('move', 'recharge')): 13.643012240199303
-(('charizard', 'spiritomb'), ('move', 'dragonpulse')): 10.784940517245214
-(('charizard', 'spiritomb'), ('switch', 'venusaur')): 18.150163760798577
-(('venusaur', 'spiritomb'), ('switch', 'snorlax')): 9.615796713657971
-(('snorlax', 'spiritomb'), ('move', 'shadowball')): -8.316586089655816
-(('snorlax', 'garchomp'), ('switch', 'venusaur')): 3.345704766418203
-(('venusaur', 'garchomp'), ('switch', 'snorlax')): 4.208272774182705
-(('charizard', 'lucario'), ('move', 'dragonpulse')): 11.683200176035053
-(('charizard', 'garchomp'), ('switch', 'blastoise')): 17.180287648664784
-(('blastoise', 'milotic'), ('move', 'focusblast')): 7.115022547588135
-(('blastoise', 'milotic'), ('move', 'hydrocannon')): 8.272991502963727
-(('blastoise', 'milotic'), ('switch', 'venusaur')): 10.80175511605039
-(('charizard', 'spiritomb'), ('switch', 'lapras')): 10.670598729078066
-(('lapras', 'spiritomb'), ('move', 'blizzard')): 9.704677751177835
-(('lapras', 'spiritomb'), ('move', 'brine')): 9.784656813419264
-(('lapras', 'roserade'), ('move', 'blizzard')): 12.029751631239856
-(('lapras', 'roserade'), ('switch', 'snorlax')): 5.210872906986123
-(('snorlax', 'roserade'), ('move', 'crunch')): -9.861286560055651
-(('snorlax', 'milotic'), ('switch', 'pikachu')): 0.30468401106108917
-(('pikachu', 'milotic'), ('move', 'irontail')): 6.098438991317525
-(('pikachu', 'milotic'), ('switch', 'charizard')): 5.083789166663393
-(('charizard', 'milotic'), ('switch', 'venusaur')): 19.557253750559536
-(('venusaur', 'garchomp'), ('switch', 'blastoise')): 14.143077926030745
-(('blastoise', 'garchomp'), ('move', 'blizzard')): 7.790636481492173
-(('blastoise', 'togekiss'), ('move', 'blizzard')): 8.93069429844378
-(('lapras', 'togekiss'), ('switch', 'charizard')): 17.593592652470797
-(('charizard', 'togekiss'), ('move', 'airslash')): 10.80919101456938
-(('charizard', 'roserade'), ('switch', 'pikachu')): 23.905455671834172
-(('snorlax', 'roserade'), ('move', 'blizzard')): -9.694365212942985
-(('snorlax', 'roserade'), ('switch', 'blastoise')): 14.945354920163872
-(('blastoise', 'roserade'), ('switch', 'venusaur')): 16.549032585703046
-(('snorlax', 'spiritomb'), ('move', 'crunch')): -7.539118222543491
-(('snorlax', 'spiritomb'), ('move', 'gigaimpact')): -7.408917389316205
-(('lapras', 'milotic'), ('move', 'brine')): 9.632185592337065
-(('lapras', 'milotic'), ('move', 'bodyslam')): 11.477241732923867
-(('venusaur', 'roserade'), ('move', 'sleeppowder')): 6.680848219696509
-(('venusaur', 'roserade'), ('move', 'frenzyplant')): 6.896368187418387
-(('venusaur', 'roserade'), ('switch', 'blastoise')): 18.482588473500012
-(('blastoise', 'roserade'), ('switch', 'pikachu')): 24.222024061302793
-(('charizard', 'togekiss'), ('move', 'blastburn')): 9.741279725651008
-(('charizard', 'garchomp'), ('move', 'recharge')): 18.227589971123848
-(('venusaur', 'garchomp'), ('move', 'frenzyplant')): 8.145252386034993
-(('snorlax', 'spiritomb'), ('move', 'blizzard')): -6.147280139999486
-(('snorlax', 'spiritomb'), ('switch', 'blastoise')): 1.2038500586396697
-(('blastoise', 'spiritomb'), ('move', 'blizzard')): 7.369116689566958
-(('blastoise', 'spiritomb'), ('switch', 'charizard')): 8.182172702331963
-(('charizard', 'spiritomb'), ('switch', 'snorlax')): 8.379202553093325
-(('blastoise', 'spiritomb'), ('switch', 'snorlax')): 7.370670912603513
-(('charizard', 'togekiss'), ('move', 'dragonpulse')): 10.214831348167335
-(('lapras', 'spiritomb'), ('move', 'psychic')): 8.902951696995492
-(('lapras', 'spiritomb'), ('move', 'bodyslam')): 8.599682726147023
-(('lapras', 'spiritomb'), ('switch', 'pikachu')): 8.881239462206041
-(('pikachu', 'spiritomb'), ('move', 'quickattack')): 14.12260783307889
-(('pikachu', 'spiritomb'), ('switch', 'lapras')): 14.405224692475192
-(('lapras', 'spiritomb'), ('switch', 'charizard')): 9.584345824391095
-(('lapras', 'spiritomb'), ('switch', 'blastoise')): 7.996432107312501
-(('snorlax', 'spiritomb'), ('switch', 'charizard')): 4.126651939516328
-(('snorlax', 'spiritomb'), ('switch', 'venusaur')): 10.790933978984498
-(('snorlax', 'spiritomb'), ('switch', 'lapras')): 4.773565791805823
-(('lapras', 'spiritomb'), ('switch', 'venusaur')): 15.98832906567198
-(('blastoise', 'spiritomb'), ('switch', 'lapras')): 10.674265088846697
-(('lapras', 'spiritomb'), ('switch', 'snorlax')): 8.806627662752152
-(('snorlax', 'spiritomb'), ('switch', 'pikachu')): 3.6934279695189924
-(('pikachu', 'spiritomb'), ('switch', 'snorlax')): 12.962374343141462
-(('charizard', 'roserade'), ('move', 'dragonpulse')): 11.05514044963788
-(('charizard', 'roserade'), ('switch', 'snorlax')): 4.099491087330521
-(('blastoise', 'lucario'), ('switch', 'pikachu')): 19.254911396350742
-(('charizard', 'togekiss'), ('switch', 'lapras')): 18.717911421440135
-(('lapras', 'togekiss'), ('move', 'psychic')): 18.407766389024577
-(('charizard', 'togekiss'), ('switch', 'snorlax')): 11.306527066385847
-(('snorlax', 'togekiss'), ('move', 'shadowball')): 4.120090419546964
-(('snorlax', 'togekiss'), ('switch', 'charizard')): 10.57389948750323
-(('charizard', 'togekiss'), ('switch', 'venusaur')): 9.856897507499907
-(('venusaur', 'togekiss'), ('move', 'gigadrain')): 7.813103108941269
-(('venusaur', 'spiritomb'), ('switch', 'blastoise')): 18.12818842330139
-(('blastoise', 'spiritomb'), ('move', 'flashcannon')): 7.909723823355499
-(('charizard', 'garchomp'), ('move', 'blastburn')): 15.937410366479526
-(('lapras', 'garchomp'), ('switch', 'venusaur')): 13.286100258537086
-(('blastoise', 'garchomp'), ('move', 'flashcannon')): 7.905959138769716
-(('blastoise', 'garchomp'), ('switch', 'venusaur')): 12.496322877251496
-(('venusaur', 'togekiss'), ('move', 'sleeppowder')): 8.00656960410227
-(('venusaur', 'togekiss'), ('move', 'frenzyplant')): 7.148105062562099
-(('venusaur', 'togekiss'), ('move', 'recharge')): 8.909859684010799
-(('charizard', 'milotic'), ('switch', 'pikachu')): 19.125568110644018
-(('venusaur', 'milotic'), ('switch', 'blastoise')): 7.965483778567771
-(('venusaur', 'milotic'), ('move', 'frenzyplant')): 6.039126431740856
-(('venusaur', 'milotic'), ('move', 'recharge')): 8.722419441536791
-(('blastoise', 'roserade'), ('switch', 'snorlax')): 7.5948209485931555
-(('snorlax', 'roserade'), ('move', 'gigaimpact')): -9.852970089358415
-(('snorlax', 'lucario'), ('switch', 'lapras')): 15.69686186451007
-(('charizard', 'togekiss'), ('switch', 'pikachu')): 10.44082796070716
-(('pikachu', 'togekiss'), ('switch', 'venusaur')): 14.058168418196628
-(('blastoise', 'milotic'), ('move', 'recharge')): 6.819067340742859
-(('blastoise', 'milotic'), ('move', 'flashcannon')): 6.112785869070303
-(('blastoise', 'milotic'), ('switch', 'charizard')): 16.708942792961956
-(('venusaur', 'milotic'), ('switch', 'snorlax')): 6.168832558726983
-(('snorlax', 'milotic'), ('switch', 'blastoise')): 2.610060206348592
-(('venusaur', 'garchomp'), ('move', 'sleeppowder')): 8.814024559426326
-(('charizard', 'garchomp'), ('switch', 'venusaur')): 20.304837425357174
-(('pikachu', 'lucario'), ('switch', 'charizard')): 17.897901463982087
-(('charizard', 'lucario'), ('switch', 'pikachu')): 10.758716729767054
-(('charizard', 'togekiss'), ('switch', 'blastoise')): 9.355962723129593
-(('blastoise', 'togekiss'), ('switch', 'venusaur')): 9.515743531699183
-(('venusaur', 'togekiss'), ('switch', 'charizard')): 9.84712238468182
-(('charizard', 'garchomp'), ('switch', 'lapras')): 18.49835607806094
-(('venusaur', 'garchomp'), ('move', 'gigadrain')): 9.27006289236766
-(('venusaur', 'garchomp'), ('switch', 'charizard')): 18.30398097858753
-(('charizard', 'lucario'), ('switch', 'snorlax')): 11.21754388234887
-(('charizard', 'lucario'), ('switch', 'blastoise')): 10.379670912271864
-(('charizard', 'lucario'), ('switch', 'lapras')): 19.672126463557852
-(('lapras', 'milotic'), ('switch', 'snorlax')): 7.302916043011106
-(('lapras', 'milotic'), ('switch', 'pikachu')): 5.163899230237698
-(('charizard', 'milotic'), ('move', 'blastburn')): 19.509597195191485
-(('lapras', 'milotic'), ('switch', 'venusaur')): 8.746346889846697
-(('snorlax', 'milotic'), ('switch', 'venusaur')): 5.261317225648995
-(('lapras', 'milotic'), ('switch', 'blastoise')): 9.21668261237043
-(('pikachu', 'milotic'), ('switch', 'blastoise')): 14.818754248100916
-(('venusaur', 'milotic'), ('switch', 'lapras')): 10.276455675748391
-(('snorlax', 'roserade'), ('switch', 'lapras')): 7.957957118759082
-(('snorlax', 'roserade'), ('switch', 'venusaur')): 6.6643842635793575
-(('snorlax', 'roserade'), ('switch', 'pikachu')): 11.861767488831166
-(('pikachu', 'roserade'), ('switch', 'snorlax')): 16.049571599070713
-(('venusaur', 'togekiss'), ('switch', 'pikachu')): 9.600293301052975
-(('snorlax', 'milotic'), ('move', 'recharge')): -7.723954193565654
-(('blastoise', 'milotic'), ('switch', 'snorlax')): 2.8632078732159316
-(('venusaur', 'spiritomb'), ('switch', 'lapras')): 17.712392378274565
-(('blastoise', 'spiritomb'), ('move', 'hydrocannon')): 8.242408725856043
-(('venusaur', 'roserade'), ('switch', 'pikachu')): 16.829269874362225
-(('venusaur', 'togekiss'), ('switch', 'snorlax')): 10.414781896759843
-(('snorlax', 'togekiss'), ('switch', 'venusaur')): 10.334320149043393
-(('venusaur', 'garchomp'), ('move', 'recharge')): 10.795898920884705
-(('venusaur', 'garchomp'), ('switch', 'lapras')): 11.996113242391031
-(('lapras', 'milotic'), ('switch', 'charizard')): 14.742476073086884
-(('snorlax', 'milotic'), ('move', 'blizzard')): -8.389589382815167
-(('lapras', 'lucario'), ('switch', 'pikachu')): 23.304979047692157
-(('pikachu', 'lucario'), ('switch', 'venusaur')): 15.716566549193555
-(('venusaur', 'lucario'), ('move', 'gigadrain')): 10.38933966579892
-(('charizard', 'lucario'), ('move', 'recharge')): 10.992531650723565
-(('pikachu', 'spiritomb'), ('switch', 'blastoise')): 14.307266786739012
-(('pikachu', 'garchomp'), ('move', 'irontail')): 18.08454369508852
-(('charizard', 'garchomp'), ('switch', 'pikachu')): 25.621050814173625
-(('pikachu', 'roserade'), ('switch', 'charizard')): 20.134543340573973
-(('pikachu', 'garchomp'), ('switch', 'venusaur')): 19.461385410971857
-(('charizard', 'spiritomb'), ('switch', 'blastoise')): 11.028317091875564
-(('charizard', 'milotic'), ('move', 'dragonpulse')): 22.954207623541894
-(('pikachu', 'milotic'), ('move', 'quickattack')): 5.975887185121444
-(('pikachu', 'milotic'), ('switch', 'venusaur')): 11.285139125945829
-(('lapras', 'roserade'), ('switch', 'pikachu')): 11.990165821443751
-(('charizard', 'milotic'), ('switch', 'blastoise')): 14.904128388605493
-(('venusaur', 'spiritomb'), ('switch', 'pikachu')): 22.646692436797146
-(('pikachu', 'spiritomb'), ('switch', 'venusaur')): 20.93362206236865
-(('pikachu', 'roserade'), ('move', 'irontail')): 4.202304795920325
-(('charizard', 'milotic'), ('move', 'recharge')): 20.72311911395732
-(('venusaur', 'milotic'), ('switch', 'charizard')): 13.892245327714804
-(('snorlax', 'lucario'), ('switch', 'venusaur')): 9.367225392682682
-(('venusaur', 'lucario'), ('move', 'sleeppowder')): 8.09609572138587
-(('blastoise', 'lucario'), ('switch', 'lapras')): 21.14631107481817
-(('pikachu', 'togekiss'), ('switch', 'charizard')): 14.068017542590837
-(('blastoise', 'togekiss'), ('move', 'flashcannon')): 8.993376309091754
-(('blastoise', 'togekiss'), ('switch', 'charizard')): 12.274070819208491
-(('pikachu', 'togekiss'), ('move', 'quickattack')): 14.089622962247788
-(('lapras', 'togekiss'), ('switch', 'venusaur')): 20.15467955119947
-(('blastoise', 'garchomp'), ('switch', 'charizard')): 15.562063203910839
-(('blastoise', 'milotic'), ('switch', 'lapras')): 12.637648422945254
-(('blastoise', 'lucario'), ('switch', 'venusaur')): 15.559488955349261
-(('venusaur', 'lucario'), ('move', 'frenzyplant')): 12.352197012872576
-(('snorlax', 'togekiss'), ('switch', 'pikachu')): 9.155460686047668
-(('pikachu', 'spiritomb'), ('switch', 'charizard')): 13.750946232912806
-(('blastoise', 'togekiss'), ('switch', 'pikachu')): 9.616305477108776
-(('charizard', 'spiritomb'), ('switch', 'pikachu')): 10.664428678662444
-(('venusaur', 'togekiss'), ('switch', 'lapras')): 17.056658503157646
-(('lapras', 'togekiss'), ('switch', 'pikachu')): 20.508362699056896
-(('venusaur', 'spiritomb'), ('switch', 'charizard')): 19.4068642123212
-(('venusaur', 'lucario'), ('switch', 'lapras')): 7.452341272425153
-(('venusaur', 'roserade'), ('switch', 'lapras')): 16.51739210052414
-(('lapras', 'roserade'), ('move', 'brine')): 13.656963918912222
-(('blastoise', 'togekiss'), ('switch', 'snorlax')): 9.896749569011718
-(('lapras', 'roserade'), ('move', 'psychic')): 13.717892421065113
-(('snorlax', 'togekiss'), ('switch', 'lapras')): 15.26680134722108
-(('lapras', 'lucario'), ('switch', 'charizard')): 21.21588004000304
-(('charizard', 'garchomp'), ('move', 'dragonpulse')): 16.39645847330454
-(('pikachu', 'togekiss'), ('switch', 'blastoise')): 14.255979833729114
-(('pikachu', 'lucario'), ('switch', 'blastoise')): 17.20465638351724
-(('lapras', 'roserade'), ('switch', 'blastoise')): 16.93032845255146
-(('blastoise', 'roserade'), ('move', 'hydrocannon')): 17.99459312007761
-(('snorlax', 'togekiss'), ('switch', 'blastoise')): 8.824120529494023
-(('pikachu', 'togekiss'), ('move', 'irontail')): 13.591495649822981
-(('pikachu', 'milotic'), ('move', 'thunderbolt')): 8.038116663279098
-(('pikachu', 'lucario'), ('switch', 'snorlax')): 16.021475794473854
-(('venusaur', 'togekiss'), ('switch', 'blastoise')): 9.861664348048055
-(('pikachu', 'roserade'), ('switch', 'lapras')): 19.321412663764946
-(('blastoise', 'garchomp'), ('switch', 'lapras')): 14.31638828019856
-(('lapras', 'togekiss'), ('switch', 'snorlax')): 17.118105867034267
-(('charizard', 'togekiss'), ('move', 'recharge')): 10.287659661749391
-(('lapras', 'roserade'), ('switch', 'venusaur')): 13.980914259784047
-(('snorlax', 'roserade'), ('switch', 'charizard')): 2.5782027793408897
-(('pikachu', 'garchomp'), ('move', 'thunderbolt')): 17.96013548725219
-(('blastoise', 'roserade'), ('move', 'blizzard')): 17.703513254541342
-(('charizard', 'roserade'), ('switch', 'lapras')): 15.007331910372102
-(('charizard', 'garchomp'), ('move', 'airslash')): 16.476025004948923
-(('blastoise', 'spiritomb'), ('switch', 'pikachu')): 10.287666716663553
-(('lapras', 'lucario'), ('move', 'bodyslam')): 19.155511047039443
-(('snorlax', 'togekiss'), ('move', 'gigaimpact')): 2.8515980316374874
-(('blastoise', 'roserade'), ('switch', 'lapras')): 19.46391870021452
-(('lapras', 'roserade'), ('switch', 'charizard')): 14.358014316017238
-(('lapras', 'roserade'), ('move', 'bodyslam')): 12.299156704388707
-(('blastoise', 'milotic'), ('switch', 'pikachu')): 9.890935380723512
-(('snorlax', 'lucario'), ('move', 'gigaimpact')): 0.5200785890251203
-(('venusaur', 'lucario'), ('move', 'recharge')): 15.409456141683965
-(('lapras', 'togekiss'), ('move', 'bodyslam')): 20.73125999006634
-(('charizard', 'milotic'), ('switch', 'lapras')): 17.09625115475362
-(('blastoise', 'milotic'), ('move', 'blizzard')): 5.493414422251909
-(('venusaur', 'lucario'), ('switch', 'blastoise')): 15.109790703687754
-(('snorlax', 'togekiss'), ('move', 'blizzard')): 3.969605118506758
-(('pikachu', 'roserade'), ('move', 'quickattack')): 2.3264236870163124
-(('snorlax', 'togekiss'), ('move', 'recharge')): 0.98512666721927
-(('snorlax', 'togekiss'), ('move', 'crunch')): 1.9830245032228233
-(('blastoise', 'roserade'), ('move', 'flashcannon')): 19.385561942175205
-(('lapras', 'lucario'), ('switch', 'snorlax')): 16.201588996897996
-(('pikachu', 'spiritomb'), ('move', 'thunderbolt')): 14.0541181928733
-(('snorlax', 'spiritomb'), ('move', 'recharge')): -4.67398891076457
-(('lapras', 'lucario'), ('move', 'psychic')): 23.781040116725165
-(('pikachu', 'togekiss'), ('switch', 'snorlax')): 10.01128588274364
-(('lapras', 'garchomp'), ('move', 'bodyslam')): 11.807127009509271
-(('snorlax', 'milotic'), ('switch', 'charizard')): 9.759706938779296
-(('snorlax', 'roserade'), ('move', 'recharge')): -3.8157360530792057
-(('pikachu', 'milotic'), ('switch', 'lapras')): 5.741048964318514
-(('lapras', 'togekiss'), ('move', 'brine')): 19.08854114086212
-(('snorlax', 'milotic'), ('move', 'gigaimpact')): -8.575573121140934
-(('pikachu', 'milotic'), ('switch', 'snorlax')): 8.438547363961757
-(('snorlax', 'garchomp'), ('move', 'recharge')): -8.595051103341751
-(('blastoise', 'lucario'), ('switch', 'snorlax')): 11.695446583075727
-(('blastoise', 'togekiss'), ('switch', 'lapras')): 18.657864840623954
-(('lapras', 'lucario'), ('move', 'brine')): 17.858547292404428
-(('pikachu', 'lucario'), ('move', 'quickattack')): 10.37563402056054
-(('venusaur', 'lucario'), ('switch', 'pikachu')): 8.24592109897224
-(('pikachu', 'togekiss'), ('move', 'thunderbolt')): 11.009954801704954
-(('pikachu', 'lucario'), ('move', 'thunderbolt')): 4.379365264518002
+(('charizard', 'lucario', 1), ('move', 'flareblitz')): -6.655480030007966
+(('charizard', 'milotic', 1), ('move', 'flareblitz')): -5.421069875249107
+(('charizard', 'milotic', 1), ('switch', 'venusaur')): 0.1526433642516245
+(('venusaur', 'milotic', 1), ('move', 'sludgebomb')): -4.701670819419842
+(('venusaur', 'togekiss', 1), ('move', 'sludgebomb')): -3.0713898590678976
+(('venusaur', 'roserade', 1), ('move', 'sludgebomb')): -5.464684496030824
+(('venusaur', 'roserade', 1), ('switch', 'snorlax')): -5.205633745698552
+(('snorlax', 'roserade', 1), ('move', 'shadowball')): -7.950030911120842
+(('snorlax', 'roserade', 1), ('move', 'crunch')): -6.751158378689878
+(('snorlax', 'roserade', 1), ('switch', 'lapras')): -7.315593294387105
+(('lapras', 'roserade', 1), ('move', 'blizzard')): -5.7073260919464
+(('lapras', 'spiritomb', 1), ('move', 'blizzard')): -6.7530375720963765
+(('lapras', 'spiritomb', 1), ('switch', 'pikachu')): -6.021452477832618
+(('pikachu', 'spiritomb', 1), ('move', 'volttackle')): -11.458246619138418
+(('pikachu', 'garchomp', 1), ('move', 'volttackle')): -6.300492176242354
+(('pikachu', 'garchomp', 1), ('switch', 'lapras')): 2.167767423354382
+(('lapras', 'garchomp', 1), ('move', 'blizzard')): -6.054684438446022
+(('lapras', 'garchomp', 1), ('switch', 'blastoise')): 1.9947003324372803
+(('blastoise', 'garchomp', 1), ('move', 'focusblast')): -5.272248124753911
+(('blastoise', 'garchomp', 1), ('move', 'hydrocannon')): -4.866442987968926
+(('lapras', 'lucario', 1), ('move', 'blizzard')): -2.498619423224224
+(('lapras', 'lucario', 1), ('switch', 'charizard')): -1.0989559685522226
+(('charizard', 'lucario', 1), ('move', 'airslash')): -2.735247050534441
+(('charizard', 'garchomp', 1), ('move', 'flareblitz')): -3.4180793955939484
+(('charizard', 'garchomp', 1), ('switch', 'pikachu')): -1.320979571135416
+(('pikachu', 'garchomp', 1), ('move', 'irontail')): -1.687936403994648
+(('pikachu', 'garchomp', 1), ('switch', 'snorlax')): -0.3411260826269311
+(('snorlax', 'garchomp', 1), ('move', 'shadowball')): -7.113745417721102
+(('snorlax', 'garchomp', 1), ('move', 'crunch')): -6.920992839405906
+(('snorlax', 'togekiss', 1), ('move', 'shadowball')): -3.5249444227210787
+(('snorlax', 'togekiss', 1), ('switch', 'venusaur')): -2.039754213968415
+(('venusaur', 'togekiss', 1), ('move', 'gigadrain')): -3.6570866054611715
+(('venusaur', 'togekiss', 1), ('move', 'sleeppowder')): -3.6875496802335315
+(('venusaur', 'roserade', 1), ('move', 'gigadrain')): -5.82960317319723
+(('venusaur', 'roserade', 1), ('switch', 'blastoise')): -4.639711609594938
+(('blastoise', 'roserade', 1), ('move', 'focusblast')): -7.907699172593228
+(('charizard', 'spiritomb', 1), ('move', 'flareblitz')): -7.040792923077245
+(('charizard', 'togekiss', 1), ('move', 'flareblitz')): -4.101716689241604
+(('charizard', 'lucario', 1), ('move', 'blastburn')): -4.519319615226746
+(('charizard', 'garchomp', 1), ('move', 'recharge')): -4.069743451659699
+(('snorlax', 'garchomp', 1), ('move', 'blizzard')): -6.930200533816529
+(('lapras', 'roserade', 1), ('move', 'brine')): -5.921704317315774
+(('lapras', 'roserade', 1), ('switch', 'blastoise')): -4.41867677079536
+(('blastoise', 'roserade', 1), ('move', 'hydrocannon')): -7.934142708578366
+(('blastoise', 'roserade', 1), ('move', 'recharge')): -6.7394635223570765
+(('blastoise', 'roserade', 1), ('switch', 'pikachu')): -6.616829001572212
+(('pikachu', 'roserade', 1), ('move', 'volttackle')): -5.484145116789363
+(('pikachu', 'roserade', 1), ('switch', 'venusaur')): -3.443266150129849
+(('snorlax', 'roserade', 1), ('switch', 'venusaur')): -5.628643797040374
+(('venusaur', 'roserade', 1), ('move', 'sleeppowder')): -6.6207256749966685
+(('venusaur', 'roserade', 1), ('move', 'frenzyplant')): -6.571327576244975
+(('venusaur', 'spiritomb', 1), ('move', 'sludgebomb')): -4.819106717718297
+(('venusaur', 'spiritomb', 1), ('move', 'gigadrain')): -4.294806348140388
+(('venusaur', 'spiritomb', 1), ('switch', 'blastoise')): -2.236239245750201
+(('blastoise', 'spiritomb', 1), ('move', 'flashcannon')): -4.189904375018109
+(('blastoise', 'spiritomb', 1), ('move', 'focusblast')): -4.336567470525544
+(('blastoise', 'milotic', 1), ('move', 'focusblast')): -4.3303426580891395
+(('blastoise', 'milotic', 1), ('move', 'hydrocannon')): -5.111923715235849
+(('blastoise', 'milotic', 1), ('switch', 'lapras')): -2.0965517010602173
+(('lapras', 'milotic', 1), ('move', 'blizzard')): -3.4599448287944083
+(('lapras', 'togekiss', 1), ('move', 'blizzard')): -0.9170358659949659
+(('lapras', 'togekiss', 1), ('move', 'brine')): -0.9338590576316134
+(('lapras', 'togekiss', 1), ('switch', 'pikachu')): -2.535168047978858
+(('pikachu', 'togekiss', 1), ('move', 'volttackle')): -8.192538411046716
+(('pikachu', 'lucario', 1), ('move', 'irontail')): -0.843338533717984
+(('pikachu', 'lucario', 1), ('switch', 'snorlax')): 2.5703078546317486
+(('snorlax', 'lucario', 1), ('move', 'shadowball')): -1.0000291129337133
+(('snorlax', 'lucario', 1), ('move', 'crunch')): -0.7378478603101091
+(('snorlax', 'lucario', 1), ('switch', 'charizard')): 2.4955240229734375
+(('charizard', 'garchomp', 1), ('move', 'airslash')): -3.5844396847792246
+(('snorlax', 'garchomp', 1), ('move', 'gigaimpact')): -7.8523994880442745
+(('snorlax', 'garchomp', 1), ('move', 'recharge')): -6.407157510775386
+(('snorlax', 'garchomp', 1), ('switch', 'venusaur')): -5.689435663897295
+(('venusaur', 'garchomp', 1), ('move', 'sludgebomb')): -2.4671204089102274
+(('venusaur', 'garchomp', 1), ('switch', 'charizard')): -3.1758763391924534
+(('pikachu', 'roserade', 1), ('switch', 'lapras')): -4.4335004218531795
+(('blastoise', 'roserade', 1), ('switch', 'lapras')): -5.4721884702137435
+(('lapras', 'roserade', 1), ('move', 'psychic')): -6.190052139808533
+(('lapras', 'lucario', 1), ('move', 'bodyslam')): -2.582015092033261
+(('charizard', 'lucario', 1), ('move', 'dragonpulse')): -0.7801830043935345
+(('charizard', 'milotic', 1), ('move', 'airslash')): -3.9761453732656773
+(('lapras', 'roserade', 1), ('move', 'bodyslam')): -5.890915609509102
+(('lapras', 'roserade', 1), ('switch', 'venusaur')): -5.114504009027926
+(('blastoise', 'roserade', 1), ('switch', 'charizard')): -5.340934583384504
+(('charizard', 'roserade', 1), ('move', 'flareblitz')): -5.406990242355022
+(('venusaur', 'milotic', 1), ('move', 'gigadrain')): -1.3232053514754247
+(('venusaur', 'togekiss', 1), ('move', 'frenzyplant')): -3.7782637763528655
+(('venusaur', 'togekiss', 1), ('move', 'recharge')): -3.562127672470983
+(('venusaur', 'spiritomb', 1), ('move', 'recharge')): -2.755873298223427
+(('venusaur', 'spiritomb', 1), ('switch', 'charizard')): 0.532524346135871
+(('charizard', 'spiritomb', 1), ('move', 'airslash')): -6.57243989946804
+(('charizard', 'spiritomb', 1), ('move', 'blastburn')): -6.890623359851826
+(('charizard', 'garchomp', 1), ('switch', 'snorlax')): -2.171367856520828
+(('snorlax', 'spiritomb', 1), ('move', 'recharge')): -2.608384323973484
+(('snorlax', 'spiritomb', 1), ('switch', 'blastoise')): -1.9511240534060776
+(('blastoise', 'spiritomb', 1), ('move', 'hydrocannon')): -4.480807942082979
+(('blastoise', 'spiritomb', 1), ('move', 'recharge')): -4.003446962402996
+(('blastoise', 'milotic', 1), ('move', 'recharge')): -4.4530783303868375
+(('lapras', 'milotic', 1), ('move', 'brine')): -3.5212220966157513
+(('lapras', 'milotic', 1), ('move', 'psychic')): -3.5311209948020297
+(('lapras', 'milotic', 1), ('switch', 'charizard')): -3.636332224883619
+(('charizard', 'milotic', 1), ('move', 'dragonpulse')): -5.700152441618429
+(('venusaur', 'milotic', 1), ('switch', 'snorlax')): -1.295348891310041
+(('snorlax', 'milotic', 1), ('move', 'shadowball')): -5.284758060363968
+(('snorlax', 'togekiss', 1), ('move', 'crunch')): -1.9210302759360598
+(('snorlax', 'togekiss', 1), ('switch', 'charizard')): -0.963055540601178
+(('charizard', 'togekiss', 1), ('move', 'airslash')): -3.731098731002094
+(('charizard', 'togekiss', 1), ('switch', 'blastoise')): -2.002353895110171
+(('charizard', 'roserade', 1), ('move', 'airslash')): -4.402088950497688
+(('blastoise', 'togekiss', 1), ('move', 'focusblast')): -3.3279842327852474
+(('blastoise', 'togekiss', 1), ('move', 'hydrocannon')): -3.059193453026481
+(('blastoise', 'togekiss', 1), ('move', 'recharge')): -2.7975146168963443
+(('blastoise', 'togekiss', 1), ('switch', 'venusaur')): -1.6584474231036923
+(('venusaur', 'togekiss', 1), ('switch', 'lapras')): -1.4742249381438013
+(('pikachu', 'togekiss', 1), ('move', 'irontail')): -9.310864794278265
+(('pikachu', 'milotic', 1), ('move', 'volttackle')): -8.68186943369186
+(('pikachu', 'milotic', 1), ('switch', 'venusaur')): 3.0282489315191454
+(('venusaur', 'lucario', 1), ('move', 'sludgebomb')): -1.3565405078470216
+(('venusaur', 'lucario', 1), ('move', 'gigadrain')): -0.8851585392567219
+(('venusaur', 'lucario', 1), ('switch', 'charizard')): 3.9965078444998445
+(('snorlax', 'garchomp', 1), ('switch', 'lapras')): -1.7040834320301481
+(('lapras', 'garchomp', 1), ('move', 'brine')): -5.17286848765465
+(('lapras', 'garchomp', 1), ('switch', 'charizard')): -2.8197610542750398
+(('pikachu', 'togekiss', 1), ('move', 'quickattack')): -9.119011637188768
+(('pikachu', 'togekiss', 1), ('switch', 'lapras')): 3.2201468547338776
+(('lapras', 'togekiss', 1), ('move', 'psychic')): -1.2205652840626673
+(('lapras', 'togekiss', 1), ('switch', 'charizard')): 2.2145835393756443
+(('venusaur', 'togekiss', 1), ('switch', 'blastoise')): -2.2689553120252963
+(('venusaur', 'togekiss', 1), ('switch', 'snorlax')): -1.3218271552212197
+(('blastoise', 'spiritomb', 1), ('switch', 'venusaur')): -3.141905065498192
+(('charizard', 'roserade', 1), ('move', 'blastburn')): -4.8133246811731665
+(('charizard', 'milotic', 1), ('move', 'recharge')): -4.963741402528114
+(('snorlax', 'milotic', 1), ('switch', 'venusaur')): -4.594882845057166
+(('venusaur', 'milotic', 1), ('move', 'sleeppowder')): -4.002246091139497
+(('venusaur', 'milotic', 1), ('move', 'frenzyplant')): -4.775122021357347
+(('charizard', 'togekiss', 1), ('move', 'blastburn')): -3.8682926744767387
+(('charizard', 'togekiss', 1), ('move', 'recharge')): -3.1665253160034066
+(('charizard', 'roserade', 1), ('move', 'recharge')): -6.22299276076341
+(('snorlax', 'garchomp', 1), ('switch', 'charizard')): -0.4794220131737288
+(('lapras', 'garchomp', 1), ('move', 'psychic')): -6.286772695252001
+(('lapras', 'garchomp', 1), ('move', 'bodyslam')): -4.883109618117043
+(('lapras', 'garchomp', 1), ('switch', 'venusaur')): -3.492656074395849
+(('charizard', 'garchomp', 1), ('move', 'blastburn')): -3.850120889162398
+(('charizard', 'garchomp', 1), ('switch', 'venusaur')): -3.0996764419287386
+(('venusaur', 'garchomp', 1), ('move', 'gigadrain')): -3.719387745983969
+(('blastoise', 'spiritomb', 1), ('move', 'blizzard')): -5.124978088964419
+(('lapras', 'garchomp', 1), ('switch', 'snorlax')): -3.7102719405839015
+(('snorlax', 'garchomp', 1), ('switch', 'pikachu')): -6.363656383253834
+(('pikachu', 'garchomp', 1), ('move', 'quickattack')): -7.12832077796574
+(('pikachu', 'garchomp', 1), ('switch', 'blastoise')): -2.2016571244080594
+(('blastoise', 'garchomp', 1), ('move', 'blizzard')): -5.867221338579677
+(('charizard', 'roserade', 1), ('move', 'dragonpulse')): -5.13357290660006
+(('charizard', 'roserade', 1), ('switch', 'blastoise')): -4.192077850135718
+(('blastoise', 'roserade', 1), ('move', 'blizzard')): -7.315781158916674
+(('blastoise', 'spiritomb', 1), ('switch', 'pikachu')): -4.364272429610443
+(('pikachu', 'spiritomb', 1), ('move', 'irontail')): -10.720164519474029
+(('lapras', 'roserade', 1), ('switch', 'snorlax')): -4.580326549001944
+(('lapras', 'roserade', 1), ('switch', 'pikachu')): -1.7133006914941067
+(('pikachu', 'roserade', 1), ('move', 'irontail')): -5.409923906755386
+(('pikachu', 'togekiss', 1), ('move', 'thunderbolt')): -8.710715035050194
+(('pikachu', 'togekiss', 1), ('switch', 'blastoise')): -1.3434136691012895
+(('blastoise', 'togekiss', 1), ('switch', 'charizard')): -2.683399768316675
+(('charizard', 'milotic', 1), ('move', 'blastburn')): -5.998241267093053
+(('charizard', 'milotic', 1), ('switch', 'snorlax')): -1.1190783313509005
+(('blastoise', 'garchomp', 1), ('move', 'flashcannon')): -5.390918921302404
+(('blastoise', 'garchomp', 1), ('switch', 'venusaur')): -2.2676560634274905
+(('venusaur', 'garchomp', 1), ('move', 'sleeppowder')): -4.001339663677506
+(('charizard', 'garchomp', 1), ('move', 'dragonpulse')): -2.4495794146240217
+(('venusaur', 'roserade', 1), ('switch', 'charizard')): -2.8820013642753084
+(('charizard', 'roserade', 1), ('switch', 'lapras')): -4.633323540235839
+(('lapras', 'roserade', 1), ('switch', 'charizard')): -4.610385174788922
+(('charizard', 'spiritomb', 1), ('move', 'dragonpulse')): -6.30469736498383
+(('charizard', 'spiritomb', 1), ('switch', 'blastoise')): -3.8232699499396126
+(('charizard', 'roserade', 1), ('switch', 'snorlax')): -3.669803686513291
+(('snorlax', 'lucario', 1), ('move', 'recharge')): -1.5768228902825951
+(('snorlax', 'lucario', 1), ('switch', 'venusaur')): 0.5717974991806242
+(('venusaur', 'lucario', 1), ('move', 'sleeppowder')): -2.0573644475455675
+(('venusaur', 'lucario', 1), ('switch', 'blastoise')): -0.5929453471206333
+(('blastoise', 'lucario', 1), ('move', 'focusblast')): -1.2141834714525275
+(('pikachu', 'spiritomb', 1), ('move', 'quickattack')): -9.626457272173328
+(('snorlax', 'roserade', 1), ('move', 'blizzard')): -7.559356349844715
+(('snorlax', 'roserade', 1), ('move', 'gigaimpact')): -8.111449751659759
+(('charizard', 'garchomp', 1), ('switch', 'blastoise')): -2.778990072245366
+(('blastoise', 'garchomp', 1), ('switch', 'charizard')): -3.8937650759393065
+(('blastoise', 'garchomp', 1), ('switch', 'lapras')): -2.3032169848209394
+(('lapras', 'garchomp', 1), ('switch', 'pikachu')): -4.330413795767965
+(('charizard', 'togekiss', 1), ('move', 'dragonpulse')): -3.4930903978902714
+(('blastoise', 'spiritomb', 1), ('switch', 'lapras')): -2.6874480667486145
+(('lapras', 'spiritomb', 1), ('move', 'brine')): -6.458462176807398
+(('charizard', 'milotic', 1), ('switch', 'lapras')): 0.16718474904508007
+(('snorlax', 'roserade', 1), ('switch', 'pikachu')): -5.628042587805019
+(('pikachu', 'roserade', 1), ('switch', 'blastoise')): -0.9993380588830162
+(('blastoise', 'roserade', 1), ('move', 'flashcannon')): -7.817342774776655
+(('blastoise', 'milotic', 1), ('move', 'flashcannon')): -4.479477680200231
+(('blastoise', 'milotic', 1), ('move', 'blizzard')): -4.424107736414653
+(('pikachu', 'spiritomb', 1), ('move', 'thunderbolt')): -11.19691576419485
+(('pikachu', 'spiritomb', 1), ('switch', 'snorlax')): 2.2474857470739784
+(('snorlax', 'garchomp', 1), ('switch', 'blastoise')): -7.081207487120398
+(('venusaur', 'garchomp', 1), ('move', 'frenzyplant')): -5.046984575495934
+(('charizard', 'garchomp', 1), ('switch', 'lapras')): -2.377735672532604
+(('blastoise', 'garchomp', 1), ('switch', 'pikachu')): -2.7956684409895316
+(('pikachu', 'garchomp', 1), ('move', 'thunderbolt')): -6.108294263794446
+(('pikachu', 'garchomp', 1), ('switch', 'venusaur')): -1.3361797715115857
+(('blastoise', 'lucario', 1), ('move', 'hydrocannon')): -0.3724537367215226
+(('blastoise', 'lucario', 1), ('move', 'recharge')): -1.2019859440419558
+(('blastoise', 'lucario', 1), ('switch', 'venusaur')): 1.59817760197381
+(('venusaur', 'garchomp', 1), ('switch', 'lapras')): -2.3143903881714065
+(('venusaur', 'garchomp', 1), ('switch', 'pikachu')): -2.904287429887396
+(('lapras', 'spiritomb', 1), ('move', 'psychic')): -6.1723250240888445
+(('lapras', 'spiritomb', 1), ('move', 'bodyslam')): -6.222029874281528
+(('lapras', 'spiritomb', 1), ('switch', 'blastoise')): -4.140164840508636
+(('charizard', 'spiritomb', 1), ('switch', 'lapras')): -3.5470599286044964
+(('snorlax', 'spiritomb', 1), ('move', 'shadowball')): -2.573164346738931
+(('snorlax', 'spiritomb', 1), ('switch', 'venusaur')): -1.1795356321476282
+(('charizard', 'spiritomb', 1), ('switch', 'venusaur')): -3.2474103439282396
+(('charizard', 'spiritomb', 1), ('switch', 'snorlax')): -0.5139903692714183
+(('snorlax', 'spiritomb', 1), ('switch', 'charizard')): -2.452375791249944
+(('blastoise', 'togekiss', 1), ('switch', 'snorlax')): -1.8386802264543278
+(('snorlax', 'togekiss', 1), ('move', 'blizzard')): -2.523521379872711
+(('snorlax', 'roserade', 1), ('switch', 'blastoise')): -6.071769236464491
+(('blastoise', 'roserade', 1), ('switch', 'snorlax')): -6.418189437832698
+(('snorlax', 'roserade', 1), ('switch', 'charizard')): -4.7351159898430755
+(('blastoise', 'roserade', 1), ('switch', 'venusaur')): -4.897865111251389
+(('blastoise', 'spiritomb', 1), ('switch', 'snorlax')): -1.5655265491990895
+(('pikachu', 'garchomp', 1), ('switch', 'charizard')): -0.8780581019634244
+(('charizard', 'togekiss', 1), ('switch', 'pikachu')): -2.84296599293563
+(('charizard', 'togekiss', 1), ('switch', 'lapras')): -0.5610005745525142
+(('charizard', 'togekiss', 1), ('switch', 'snorlax')): -1.7104889697564878
+(('charizard', 'togekiss', 1), ('switch', 'venusaur')): -1.6514699994415198
+(('venusaur', 'togekiss', 1), ('switch', 'pikachu')): -4.55441483611515
+(('venusaur', 'togekiss', 1), ('switch', 'charizard')): -3.020156946371749
+(('charizard', 'lucario', 1), ('switch', 'blastoise')): -2.4583370544575045
+(('blastoise', 'lucario', 1), ('switch', 'charizard')): 2.6809402469566734
+(('venusaur', 'garchomp', 1), ('switch', 'blastoise')): -1.7793659743872656
+(('charizard', 'lucario', 1), ('switch', 'snorlax')): -1.097007289739665
+(('charizard', 'lucario', 1), ('switch', 'venusaur')): -2.2821126634066933
+(('charizard', 'lucario', 1), ('switch', 'lapras')): -2.791876956811158
+(('charizard', 'lucario', 1), ('switch', 'pikachu')): -8.984341854265477
+(('venusaur', 'milotic', 1), ('switch', 'charizard')): -3.135928769798454
+(('snorlax', 'milotic', 1), ('move', 'crunch')): -4.76807026546374
+(('lapras', 'spiritomb', 1), ('switch', 'charizard')): -4.453746542309553
+(('lapras', 'spiritomb', 1), ('switch', 'venusaur')): -4.632601264131278
+(('lapras', 'spiritomb', 1), ('switch', 'snorlax')): -1.5794079546556863
+(('snorlax', 'spiritomb', 1), ('move', 'crunch')): -2.533966870682142
+(('blastoise', 'garchomp', 1), ('move', 'recharge')): -4.103071218607719
+(('lapras', 'togekiss', 1), ('move', 'bodyslam')): -0.3951135454856667
+(('lapras', 'togekiss', 1), ('switch', 'venusaur')): -0.4937986488651416
+(('snorlax', 'spiritomb', 1), ('move', 'blizzard')): 0.009144334211723865
+(('snorlax', 'spiritomb', 1), ('move', 'gigaimpact')): -2.9725540628900307
+(('snorlax', 'spiritomb', 1), ('switch', 'pikachu')): -4.079139082247563
+(('lapras', 'togekiss', 1), ('switch', 'blastoise')): 0.2574176859101281
+(('snorlax', 'togekiss', 1), ('move', 'gigaimpact')): -2.6350615579132572
+(('snorlax', 'togekiss', 1), ('switch', 'blastoise')): -1.6125221914248589
+(('blastoise', 'milotic', 1), ('switch', 'pikachu')): -5.471511760271931
+(('pikachu', 'milotic', 1), ('move', 'irontail')): -9.412457900216438
+(('pikachu', 'milotic', 1), ('switch', 'blastoise')): -0.7381929106239015
+(('charizard', 'roserade', 1), ('switch', 'pikachu')): -4.821637270698174
+(('pikachu', 'roserade', 1), ('switch', 'charizard')): -1.4972119655503988
+(('charizard', 'lucario', 1), ('move', 'recharge')): -1.3301479876929936
+(('pikachu', 'spiritomb', 1), ('switch', 'venusaur')): -2.6013587412328705
+(('blastoise', 'spiritomb', 1), ('switch', 'charizard')): -4.353914875425111
+(('charizard', 'spiritomb', 1), ('switch', 'pikachu')): -5.35141160048866
+(('venusaur', 'spiritomb', 1), ('move', 'sleeppowder')): -4.500836942204971
+(('venusaur', 'spiritomb', 1), ('switch', 'lapras')): -2.8101920869460857
+(('venusaur', 'spiritomb', 1), ('move', 'frenzyplant')): -4.45056208582036
+(('venusaur', 'roserade', 1), ('switch', 'lapras')): -3.5581765630268607
+(('venusaur', 'roserade', 1), ('move', 'recharge')): -5.526860491278261
+(('snorlax', 'togekiss', 1), ('switch', 'pikachu')): -2.3202984254160426
+(('pikachu', 'togekiss', 1), ('switch', 'snorlax')): -0.15157098736456814
+(('venusaur', 'milotic', 1), ('switch', 'pikachu')): -4.027772782601437
+(('charizard', 'roserade', 1), ('switch', 'venusaur')): -3.896700495057926
+(('venusaur', 'roserade', 1), ('switch', 'pikachu')): -4.269219257378549
+(('venusaur', 'garchomp', 1), ('move', 'recharge')): -4.64054431670703
+(('blastoise', 'garchomp', 1), ('switch', 'snorlax')): -3.668786646899867
+(('venusaur', 'garchomp', 1), ('switch', 'snorlax')): -1.533922670703947
+(('snorlax', 'spiritomb', 1), ('switch', 'lapras')): 0.8654407042763665
+(('charizard', 'milotic', 1), ('switch', 'pikachu')): -4.849952449148076
+(('pikachu', 'milotic', 1), ('move', 'quickattack')): -9.586508620720544
+(('pikachu', 'milotic', 1), ('switch', 'charizard')): -2.7951703038108153
+(('venusaur', 'spiritomb', 1), ('switch', 'pikachu')): -2.297474748380619
+(('pikachu', 'spiritomb', 1), ('switch', 'lapras')): -3.5484172893539667
+(('pikachu', 'lucario', 1), ('move', 'volttackle')): -2.8952450125768836
+(('charizard', 'spiritomb', 1), ('move', 'recharge')): -4.423772334219219
+(('lapras', 'milotic', 1), ('move', 'bodyslam')): -3.2799414549817385
+(('pikachu', 'spiritomb', 1), ('switch', 'charizard')): -2.7890250457270565
+(('pikachu', 'spiritomb', 1), ('switch', 'blastoise')): 0.30528258258858376
+(('venusaur', 'spiritomb', 1), ('switch', 'snorlax')): 1.1465763089448227
+(('blastoise', 'togekiss', 1), ('move', 'blizzard')): -4.309854745100743
+(('snorlax', 'milotic', 1), ('move', 'blizzard')): -5.378309780261959
+(('snorlax', 'milotic', 1), ('move', 'gigaimpact')): -4.351224720652769
+(('snorlax', 'milotic', 1), ('switch', 'blastoise')): -3.7399533889465233
+(('lapras', 'milotic', 1), ('switch', 'blastoise')): -3.0087598779744367
+(('blastoise', 'milotic', 1), ('switch', 'charizard')): -2.220815885541168
+(('charizard', 'milotic', 1), ('switch', 'blastoise')): -1.6262186334443487
+(('pikachu', 'milotic', 1), ('move', 'thunderbolt')): -9.407828211802784
+(('lapras', 'milotic', 1), ('switch', 'snorlax')): -3.3378992014501287
+(('lapras', 'milotic', 1), ('switch', 'pikachu')): -4.452873108491718
+(('venusaur', 'milotic', 1), ('switch', 'blastoise')): -4.13693631611013
+(('lapras', 'milotic', 1), ('switch', 'venusaur')): -3.3278625720007637
+(('blastoise', 'milotic', 1), ('switch', 'snorlax')): -2.3705561434948335
+(('snorlax', 'milotic', 1), ('switch', 'charizard')): -5.158692439124204
+(('snorlax', 'milotic', 1), ('switch', 'pikachu')): -6.773844040499217
+(('snorlax', 'milotic', 1), ('switch', 'lapras')): -2.267944949891715
+(('venusaur', 'milotic', 1), ('switch', 'lapras')): -2.6549156584445774
+(('blastoise', 'milotic', 1), ('switch', 'venusaur')): -1.2642648321418035
+(('blastoise', 'lucario', 1), ('switch', 'pikachu')): 0.877741922183089
+(('venusaur', 'lucario', 1), ('move', 'recharge')): -1.3737071475628522
+(('pikachu', 'milotic', 1), ('switch', 'lapras')): 0.9105325926527054
+(('pikachu', 'lucario', 1), ('move', 'quickattack')): -2.8407244758300902
+(('pikachu', 'lucario', 1), ('switch', 'lapras')): 0.7377266518685306
+(('snorlax', 'togekiss', 1), ('move', 'recharge')): -3.139873004165065
+(('venusaur', 'milotic', 1), ('move', 'recharge')): -2.950352664065562
+(('pikachu', 'milotic', 1), ('switch', 'snorlax')): -0.15057998995776345
+(('lapras', 'lucario', 1), ('switch', 'pikachu')): -1.870427178902309
+(('pikachu', 'lucario', 1), ('move', 'thunderbolt')): -2.5304084512573572
+(('pikachu', 'lucario', 1), ('switch', 'venusaur')): 3.850527756745454
+(('blastoise', 'togekiss', 1), ('move', 'flashcannon')): -3.9804688331889357
+(('blastoise', 'togekiss', 1), ('switch', 'pikachu')): -2.938132306636763
+(('blastoise', 'togekiss', 1), ('switch', 'lapras')): -0.12253732570586445
+(('pikachu', 'togekiss', 1), ('switch', 'charizard')): 0.1544008020880114
+(('pikachu', 'roserade', 1), ('move', 'quickattack')): -5.7083833319659565
+(('lapras', 'togekiss', 1), ('switch', 'snorlax')): -0.18584973637388186
+(('pikachu', 'togekiss', 1), ('switch', 'venusaur')): -0.9579421517316573
+(('snorlax', 'togekiss', 1), ('switch', 'lapras')): -1.5216497643459803
+(('venusaur', 'lucario', 1), ('move', 'frenzyplant')): -2.359903004692869
+(('venusaur', 'lucario', 1), ('switch', 'pikachu')): 0.700769054381368
+(('blastoise', 'lucario', 1), ('move', 'blizzard')): -1.1935777901608855
+(('snorlax', 'roserade', 1), ('move', 'recharge')): -6.136117117787528
+(('lapras', 'lucario', 1), ('move', 'brine')): -2.5456830284009637
+(('lapras', 'lucario', 1), ('switch', 'snorlax')): 2.1832491413815616
+(('snorlax', 'lucario', 1), ('switch', 'blastoise')): 0.08766088214005424
+(('pikachu', 'roserade', 1), ('move', 'thunderbolt')): -5.783742472009814
+(('pikachu', 'roserade', 1), ('switch', 'snorlax')): -3.1998794812158926
+(('snorlax', 'lucario', 1), ('move', 'blizzard')): -2.065712506876357
+(('snorlax', 'lucario', 1), ('switch', 'pikachu')): 0.08871189341176017
+(('snorlax', 'lucario', 1), ('move', 'gigaimpact')): -0.8908506267235453
+(('snorlax', 'lucario', 1), ('switch', 'lapras')): 2.0714867764026974
+(('lapras', 'lucario', 1), ('move', 'psychic')): -2.2727035176828045
+(('lapras', 'lucario', 1), ('switch', 'venusaur')): 1.1325989674967036
+(('venusaur', 'lucario', 1), ('switch', 'lapras')): -0.3141242032368994
+(('lapras', 'lucario', 1), ('switch', 'blastoise')): -1.9871601350620547
+(('snorlax', 'milotic', 1), ('move', 'recharge')): -4.169744656762966
+(('blastoise', 'lucario', 1), ('move', 'flashcannon')): -0.9966452828051697
+(('blastoise', 'lucario', 1), ('switch', 'snorlax')): 0.9043380895780126
+(('venusaur', 'lucario', 1), ('switch', 'snorlax')): -0.9708482786921995
+(('pikachu', 'lucario', 1), ('switch', 'blastoise')): 1.4674193522840577
+(('blastoise', 'lucario', 1), ('switch', 'lapras')): -0.36392832292436117
+(('pikachu', 'lucario', 1), ('switch', 'charizard')): 1.991201912358774

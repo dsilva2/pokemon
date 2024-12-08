@@ -15,14 +15,14 @@ async def evaluate_optimal_policy():
     )
 
     # Create an opponent
-    opponent = MaxDamagePlayer(
+    opponent = RandomPlayer(
         battle_format="gen5ubers",
         team=opponent_team,
     )
 
     # Run a single battle
-    await optimal_player.battle_against(opponent, n_battles=100)
-    print(f"Optimal Policy Player's win rate: {optimal_player.n_won_battles}")
+    await optimal_player.battle_against(opponent, n_battles=1000)
+    print(f"Optimal Policy Player's win rate: {optimal_player.n_won_battles / 1000}")
 
 if __name__ == "__main__":
     asyncio.run(evaluate_optimal_policy())
