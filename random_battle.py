@@ -1,5 +1,6 @@
 import asyncio
-from helpers.helpers import RandomPlayer
+from helpers.helpers import RandomPlayer, MaxDamagePlayer
+from agent_team import agent_team
 import random
 
 # Define the list of Pokémon for random team generation
@@ -80,25 +81,26 @@ def generate_random_team():
         formatted_team += "\n"
     return formatted_team
 
-async def simulate_random_battles(n_battles=5000):
-    """Simulates battles between two random players."""
-    total_battles = n_battles
-    random_player_1_wins = 0
+async def train_sarsa_agent_with_win_tracking(n_battles=5000, eval_interval=200):
+    total_wins = 0
+    win_pct_over_time = []
 
-    for _ in range(total_battles):
-        team_1 = generate_random_team()
-        team_2 = generate_random_team()
+    player = RandomPlayer(battle_format="gen5ubers", team=agent_team)
+    for i in range(1, n_battles + 1):
+        # Generate a new random opponent team for each battle
+        opponent_team = generate_random_team()
+        opponent = MaxDamagePlayer(battle_format="gen5ubers", team=opponent_team)
 
-        player_1 = RandomPlayer(battle_format="gen5ubers", team=team_1)
-        player_2 = RandomPlayer(battle_format="gen5ubers", team=team_2)
+        # Conduct a battle and track wins
+        await player.battle_against(opponent, n_battles=1)
+        if player.n_won_battles > total_wins:  # Increment wins if player wins
+            total_wins += 1
 
-        await player_1.battle_against(player_2, n_battles=1)
-
-        if player_1.n_won_battles > 0:
-            random_player_1_wins += 1
-
-    win_percentage = (random_player_1_wins / total_battles) * 100
-    print(f"Player 1 Win Percentage: {win_percentage:.2f}% over {total_battles} battles.")
+        # Print win percentage at intervals
+        if i % eval_interval == 0:
+            win_percentage = (total_wins / i) * 100
+            win_pct_over_time.append((i, total_wins / i * 100))
+            print('win percentage', win_percentage)
 
 if __name__ == "__main__":
-    asyncio.run(simulate_random_battles())
+    asyncio.run(train_sarsa_agent_with_win_tracking())
