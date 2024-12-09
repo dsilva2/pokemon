@@ -154,6 +154,28 @@ def calculate_reward(my_hp_before, my_hp_after, opponent_hp_before, opponent_hp_
     - % HP damage to opponent: +% (of HP lost)
     - % HP damage to self: -% (of HP lost)
     """
+
+    type_effectiveness = {
+    "NORMAL": {"ROCK": 0.5, "GHOST": 0, "STEEL": 0.5},
+    "FIRE": {"GRASS": 2, "ICE": 2, "BUG": 2, "STEEL": 2, "FIRE": 0.5, "WATER": 0.5, "ROCK": 0.5, "DRAGON": 0.5},
+    "WATER": {"FIRE": 2, "GROUND": 2, "ROCK": 2, "WATER": 0.5, "GRASS": 0.5, "DRAGON": 0.5},
+    "ELECTRIC": {"WATER": 2, "FLYING": 2, "ELECTRIC": 0.5, "GRASS": 0.5, "GROUND": 0},
+    "GRASS": {"WATER": 2, "GROUND": 2, "ROCK": 2, "FIRE": 0.5, "GRASS": 0.5, "POISON": 0.5, "FLYING": 0.5, "BUG": 0.5, "DRAGON": 0.5, "STEEL": 0.5},
+    "ICE": {"GRASS": 2, "GROUND": 2, "FLYING": 2, "DRAGON": 2, "FIRE": 0.5, "WATER": 0.5, "ICE": 0.5, "STEEL": 0.5},
+    "FIGHTING": {"NORMAL": 2, "ICE": 2, "ROCK": 2, "DARK": 2, "STEEL": 2, "POISON": 0.5, "FLYING": 0.5, "PSYCHIC": 0.5, "BUG": 0.5, "FAIRY": 0.5, "GHOST": 0},
+    "POISON": {"GRASS": 2, "FAIRY": 2, "POISON": 0.5, "GROUND": 0.5, "ROCK": 0.5, "GHOST": 0.5, "STEEL": 0},
+    "GROUND": {"FIRE": 2, "ELECTRIC": 2, "POISON": 2, "ROCK": 2, "STEEL": 2, "GRASS": 0.5, "BUG": 0.5, "FLYING": 0},
+    "FLYING": {"GRASS": 2, "FIGHTING": 2, "BUG": 2, "ELECTRIC": 0.5, "ROCK": 0.5, "STEEL": 0.5},
+    "PSYCHIC": {"FIGHTING": 2, "POISON": 2, "PSYCHIC": 0.5, "STEEL": 0.5, "DARK": 0},
+    "BUG": {"GRASS": 2, "PSYCHIC": 2, "DARK": 2, "FIRE": 0.5, "FIGHTING": 0.5, "POISON": 0.5, "FLYING": 0.5, "GHOST": 0.5, "STEEL": 0.5, "FAIRY": 0.5},
+    "ROCK": {"FIRE": 2, "ICE": 2, "FLYING": 2, "BUG": 2, "FIGHTING": 0.5, "GROUND": 0.5, "STEEL": 0.5},
+    "GHOST": {"PSYCHIC": 2, "GHOST": 2, "DARK": 0.5, "NORMAL": 0},
+    "DRAGON": {"DRAGON": 2, "STEEL": 0.5, "FAIRY": 0},
+    "DARK": {"PSYCHIC": 2, "GHOST": 2, "FIGHTING": 0.5, "DARK": 0.5, "FAIRY": 0.5},
+    "STEEL": {"ICE": 2, "ROCK": 2, "FAIRY": 2, "FIRE": 0.5, "WATER": 0.5, "ELECTRIC": 0.5, "STEEL": 0.5},
+    "FAIRY": {"FIGHTING": 2, "DRAGON": 2, "DARK": 2, "FIRE": 0.5, "POISON": 0.5, "STEEL": 0.5},
+}
+
     # 1. Winning or Losing
     if battle.won:
         return 100  # Winning
@@ -170,22 +192,44 @@ def calculate_reward(my_hp_before, my_hp_after, opponent_hp_before, opponent_hp_
     my_hp_loss_percentage = (my_hp_lost / my_max_hp) * 10 if my_max_hp else 0
 
     # 3. Fainting
-    opponent_fainted_reward = 10 if opponent_hp_after == 0 else 0
+    opponent_fainted_reward = 50 if opponent_hp_after == 0 else 0
+
+    # 4. Own pokemon fainting
+    my_fainted_reward = -50 if my_hp_after == 0 else 0
+
+    
+
 
     # Type effectiveness multiplier
-    active_type = battle.active_pokemon.types[0] if battle.active_pokemon else "None"
-    opponent_type = battle.opponent_active_pokemon.types[0] if battle.opponent_active_pokemon else "None"
+    active_type = battle.active_pokemon.types[0].name if battle.active_pokemon else "None"
+    opponent_type = battle.opponent_active_pokemon.types[0].name if battle.opponent_active_pokemon else "None"
+    type_multiplier = type_effectiveness.get(active_type, {}).get(opponent_type, 1)
+    
+
+    # Reward based on type effectiveness
+    type_effectiveness_bonus = (type_multiplier - 1) * 5
     # type_multiplier = type_effectiveness.get(active_type, {}).get(opponent_type, 1)
 
-    # Adjust reward based on type effectiveness
-    # type_effectiveness_bonus = 5 * (type_multiplier - 1)  # Reward for effective moves
+    # type_effectiveness_bonus = 0
+
+
+
+    reward = (opponent_hp_loss_percentage -  # Positive reward for damage dealt
+        my_hp_loss_percentage +  # Negative penalty for damage received
+        opponent_fainted_reward +   # Bonus for fainting opponent
+        my_fainted_reward)
+    
+    if opponent_hp_before == opponent_hp_after and my_hp_before == my_hp_after:
+        reward -= 5  # Penalize stalling or ineffective moves
+    
 
     # Total reward
     return (
         opponent_hp_loss_percentage -  # Positive reward for damage dealt
         my_hp_loss_percentage +  # Negative penalty for damage received
-        opponent_fainted_reward   # Bonus for fainting opponent
-        # type_effectiveness_bonus  # Bonus for type effectiveness
+        opponent_fainted_reward +   # Bonus for fainting opponent
+        my_fainted_reward +
+        type_effectiveness_bonus  # Bonus for type effectiveness
     )
 
 
@@ -335,7 +379,10 @@ class SarsaPlayer(Player):
         self.default_q_value = 0
         self.alpha = 0.1  # Learning rate
         self.gamma = 0.9  # Discount factor
-        self.epsilon = 0.1  # Exploration rate
+        self.epsilon = 1.0  # Exploration rate
+        self.epsilon_decay = 0.995
+        self.min_epsilon = 0.1
+        self.last_was_switch = False
 
     def get_state(self, battle):
         """Get the current state representation."""
@@ -367,12 +414,15 @@ class SarsaPlayer(Player):
         """Choose a move based on SARSA."""
         # Get the current state
         state = self.get_state(battle)
+        action_space = self.get_action_space(battle)
 
         # Get the action space
-        action_space = self.get_action_space(battle)
-        if not action_space:
-            return self.choose_random_move(battle)  # Fallback if no valid actions
+        if self.last_was_switch:
+            action_space = [action for action in action_space if action[0] != "switch"]
 
+        # If no valid actions remain, reset to allow any action
+        if not action_space:
+            action_space = self.get_action_space(battle)
         # Choose the current action
         action = self.choose_action(state, action_space)
 
@@ -380,9 +430,11 @@ class SarsaPlayer(Player):
         if action[0] == "move":
             move = next(m for m in battle.available_moves if m.id == action[1])
             move_order = self.create_order(move)
+            self.last_was_switch = False
         elif action[0] == "switch":
             switch = next(p for p in battle.available_switches if p.species == action[1])
             move_order = self.create_order(switch)
+            self.last_was_switch = True
 
         # Update the Q-table if this is not the first move
         if self.last_state is not None and self.last_action is not None:
@@ -411,5 +463,6 @@ class SarsaPlayer(Player):
         self.last_action = action
         self.opponent_prev_hp = battle.opponent_active_pokemon.current_hp
         self.my_prev_hp = battle.active_pokemon.current_hp
+        self.epsilon = max(self.min_epsilon, self.epsilon * self.epsilon_decay)
 
         return move_order

@@ -101,4 +101,4 @@ async def train_sarsa_agent_with_win_tracking(n_battles=1000, eval_interval=200)
             print(f"After {i} battles: Win percentage = {win_percentage:.2f}%")
 
 if __name__ == "__main__":
-    asyncio.run(train_sarsa_agent_with_win_tracking(n_battles=10000))
+    asyncio.run(train_sarsa_agent_with_win_tracking(n_battles=5000))
