@@ -2,6 +2,8 @@ import asyncio
 import random
 from helpers.helpers import QLearningPlayer, MaxDamagePlayer, RandomPlayer, save_q_table, q_table, SarsaPlayer
 from agent_team import agent_team
+import matplotlib.pyplot as plt
+
 
 # Define the list of Pokémon for random team generation
 pokemon_list = [
@@ -83,6 +85,7 @@ def generate_random_team():
 
 async def train_sarsa_agent_with_win_tracking(n_battles=1000, eval_interval=200):
     total_wins = 0
+    win_pct_over_time = []
 
     player = SarsaPlayer(battle_format="gen5ubers", team=agent_team)
     for i in range(1, n_battles + 1):
@@ -98,7 +101,22 @@ async def train_sarsa_agent_with_win_tracking(n_battles=1000, eval_interval=200)
         # Print win percentage at intervals
         if i % eval_interval == 0:
             win_percentage = (total_wins / i) * 100
+            win_pct_over_time.append((i, total_wins / i * 100))
             print(f"After {i} battles: Win percentage = {win_percentage:.2f}%")
+    print("win pct over time", win_pct_over_time)
+    battles, win_percentages = zip(*win_pct_over_time)  # Extract data for plotting
+    plt.figure(figsize=(10, 6))
+    plt.plot(battles, win_percentages, marker='o', linestyle='-', linewidth=2, color='orange', label="Win Percentage")
+    plt.title("SARSA vs Random Win % Over Time", fontsize=16)
+    plt.xlabel("Number of Battles", fontsize=14)
+    plt.ylabel("Win Percentage (%)", fontsize=14)
+    plt.grid(True, which='both', linestyle='--', linewidth=0.5)
+    plt.xticks(fontsize=12)
+    plt.yticks(fontsize=12)
+    plt.tight_layout()
+    plt.legend(fontsize=12)
+    plt.show()
 
 if __name__ == "__main__":
     asyncio.run(train_sarsa_agent_with_win_tracking(n_battles=5000))
+

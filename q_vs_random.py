@@ -1,9 +1,10 @@
 import asyncio
 import random
-from helpers.helpers import QLearningPlayer, MaxDamagePlayer, RandomPlayer, save_q_table, q_table, SarsaPlayer
+from helpers.helpers import QLearningPlayer, OptimalPolicyPlayer, RandomPlayer, save_q_table, load_q_table, q_table
 from agent_team import agent_team
+import matplotlib.pyplot as plt
 
-# Define the list of Pokémon for random team generation
+# Define Pokémon for random team generation
 pokemon_list = [
     {
         "name": "Pidgeot",
@@ -81,17 +82,74 @@ def generate_random_team():
         formatted_team += "\n"
     return formatted_team
 
-async def train_q_learning_agent(n_battles=1000):
-    for i in range(n_battles):
+async def train_q_learning_agent(n_battles=1000, eval_interval=200):
+    total_wins = 0
+    win_pct_over_time = []
+    player = QLearningPlayer(battle_format="gen5ubers", team=agent_team)
+
+    for i in range(1, n_battles + 1):
         # Generate a new random opponent team for each battle
         opponent_team = generate_random_team()
-
-        player = QLearningPlayer(battle_format="gen5ubers", team=agent_team)
         opponent = RandomPlayer(battle_format="gen5ubers", team=opponent_team)
-        await player.battle_against(opponent, n_battles=1)
 
-    # Save Q-table after training
-    save_q_table(q_table, "q_table_sarsa_random.txt")
+        # Conduct a battle and track wins
+        await player.battle_against(opponent, n_battles=1)
+        if player.n_won_battles > total_wins:
+            total_wins += 1
+
+        # Store win percentage at intervals
+        if i % eval_interval == 0:
+            win_percentage = (total_wins / i) * 100
+            win_pct_over_time.append((i, win_percentage))
+            print(f"After {i} battles: Win percentage = {win_percentage:.2f}%")
+
+    # Save the Q-table after training
+    save_q_table(q_table, "q_vs_random.txt")
+    return win_pct_over_time
+
+async def evaluate_optimal_policy(n_battles=1000):
+    # Load the trained Q-table
+    q_table = load_q_table("q_vs_random.txt")
+
+    # Create the optimal policy player
+    optimal_player = OptimalPolicyPlayer(
+        q_table=q_table,
+        battle_format="gen5ubers",
+        team=agent_team,
+    )
+
+    # Evaluate against a random opponent
+    total_wins = 0
+    for i in range(n_battles):
+        opponent_team = generate_random_team()
+        opponent = RandomPlayer(battle_format="gen5ubers", team=opponent_team)
+        await optimal_player.battle_against(opponent, n_battles=1)
+        if optimal_player.n_won_battles > total_wins:
+            total_wins += 1
+
+    win_percentage = (total_wins / n_battles) * 100
+    print(f"Optimal Policy Player's win percentage: {win_percentage:.2f}%")
+
+async def main():
+    # Train the Q-Learning agent
+    print("Training Q-Learning agent...")
+    win_pct_over_time = await train_q_learning_agent(n_battles=5000, eval_interval=200)
+    print('win pct over time', win_pct_over_time)
+
+    # Plot win percentage over time
+    battles, win_percentages = zip(*win_pct_over_time)
+    plt.figure(figsize=(10, 6))
+    plt.plot(battles, win_percentages, marker='o', linestyle='-', label="Q-Learning Training")
+    plt.xlabel("Number of Battles")
+    plt.ylabel("Win Percentage")
+    plt.title("Q-Learning: Win Percentage Over Time")
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+
+    # Evaluate the trained Q-Learning agent
+    print("Evaluating trained Q-Learning agent...")
+    await evaluate_optimal_policy(n_battles=5000)
 
 if __name__ == "__main__":
-    asyncio.run(train_q_learning_agent(n_battles=5000))
+    asyncio.run(main())
