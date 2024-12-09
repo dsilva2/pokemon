@@ -1,6 +1,6 @@
 import asyncio
 import random
-from helpers.helpers import QLearningPlayer, MaxDamagePlayer, RandomPlayer, save_q_table, q_table, SarsaPlayer
+from helpers.helpers import QLearningPlayer, MaxDamagePlayer, RandomPlayer, save_q_table, q_table
 from agent_team import agent_team
 
 # Define the list of Pokémon for random team generation
@@ -86,12 +86,12 @@ async def train_q_learning_agent(n_battles=1000):
         # Generate a new random opponent team for each battle
         opponent_team = generate_random_team()
 
-        player = SarsaPlayer(battle_format="gen5ubers", team=agent_team)
-        opponent = RandomPlayer(battle_format="gen5ubers", team=opponent_team)
+        player = QLearningPlayer(battle_format="gen5ubers", team=agent_team)
+        opponent = MaxDamagePlayer(battle_format="gen5ubers", team=opponent_team)
         await player.battle_against(opponent, n_battles=1)
 
     # Save Q-table after training
-    save_q_table(q_table, "q_table_sarsa_random.txt")
+    save_q_table(q_table, "q_table_max_damage.txt")
 
 if __name__ == "__main__":
     asyncio.run(train_q_learning_agent(n_battles=2000))

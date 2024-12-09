@@ -1,7 +1,8 @@
 import asyncio
-import random
-from helpers.helpers import QLearningPlayer, MaxDamagePlayer, RandomPlayer, save_q_table, q_table, SarsaPlayer
+from helpers.helpers import OptimalPolicyPlayer, MaxDamagePlayer, RandomPlayer, load_q_table
 from agent_team import agent_team
+# from hardcoded_random_team import opponent_team
+import random
 
 # Define the list of Pokémon for random team generation
 pokemon_list = [
@@ -81,17 +82,28 @@ def generate_random_team():
         formatted_team += "\n"
     return formatted_team
 
-async def train_q_learning_agent(n_battles=1000):
-    for i in range(n_battles):
-        # Generate a new random opponent team for each battle
-        opponent_team = generate_random_team()
+async def evaluate_optimal_policy():
+    opponent_team = generate_random_team()
+    # Load the trained Q-table
+    q_table = load_q_table("q_table.txt")
 
-        player = SarsaPlayer(battle_format="gen5ubers", team=agent_team)
-        opponent = RandomPlayer(battle_format="gen5ubers", team=opponent_team)
-        await player.battle_against(opponent, n_battles=1)
+    # Create the optimal policy player
+    optimal_player = OptimalPolicyPlayer(
+        q_table=q_table,
+        battle_format="gen5ubers",
+        team=agent_team,
+    )
 
-    # Save Q-table after training
-    save_q_table(q_table, "q_table_sarsa_random.txt")
+    # Create an opponent
+    opponent = MaxDamagePlayer(
+        battle_format="gen5ubers",
+        team=opponent_team,
+    )
+
+    # Run a single battle
+    num_battles = 1000
+    await optimal_player.battle_against(opponent, n_battles=num_battles)
+    print(f"Optimal Policy Player's win rate: {optimal_player.n_won_battles / num_battles}")
 
 if __name__ == "__main__":
-    asyncio.run(train_q_learning_agent(n_battles=2000))
+    asyncio.run(evaluate_optimal_policy())

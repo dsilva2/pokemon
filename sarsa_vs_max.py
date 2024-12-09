@@ -81,17 +81,24 @@ def generate_random_team():
         formatted_team += "\n"
     return formatted_team
 
-async def train_q_learning_agent(n_battles=1000):
-    for i in range(n_battles):
+async def train_sarsa_agent_with_win_tracking(n_battles=1000, eval_interval=200):
+    total_wins = 0
+
+    player = SarsaPlayer(battle_format="gen5ubers", team=agent_team)
+    for i in range(1, n_battles + 1):
         # Generate a new random opponent team for each battle
         opponent_team = generate_random_team()
+        opponent = MaxDamagePlayer(battle_format="gen5ubers", team=opponent_team)
 
-        player = SarsaPlayer(battle_format="gen5ubers", team=agent_team)
-        opponent = RandomPlayer(battle_format="gen5ubers", team=opponent_team)
+        # Conduct a battle and track wins
         await player.battle_against(opponent, n_battles=1)
+        if player.n_won_battles > total_wins:  # Increment wins if player wins
+            total_wins += 1
 
-    # Save Q-table after training
-    save_q_table(q_table, "q_table_sarsa_random.txt")
+        # Print win percentage at intervals
+        if i % eval_interval == 0:
+            win_percentage = (total_wins / i) * 100
+            print(f"After {i} battles: Win percentage = {win_percentage:.2f}%")
 
 if __name__ == "__main__":
-    asyncio.run(train_q_learning_agent(n_battles=2000))
+    asyncio.run(train_sarsa_agent_with_win_tracking(n_battles=10000))

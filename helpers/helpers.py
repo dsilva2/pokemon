@@ -219,7 +219,7 @@ class QLearningPlayer(Player):
         if self.num_switches > 2:
             old_action_space = action_space
             action_space = [action for action in action_space if action[0] != "switch"]
-            print(len(action_space), action_space, "\n\n\n\n\n\n\n\n\n\n")
+            # print(len(action_space), action_space, "\n\n\n\n\n\n\n\n\n\n")
             # action_space = action_space if len(action_space) > 0 else old_action_space
 
         # Fallback: If action_space is empty, repopulate it and reset last_was_switch
@@ -321,5 +321,95 @@ class OptimalPolicyPlayer(Player):
             switch = next(p for p in battle.available_switches if p.species == action[1])
             move_order = self.create_order(switch)
             self.num_switches += 1
+
+        return move_order
+
+class SarsaPlayer(Player):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.last_state = None
+        self.last_action = None
+        self.opponent_prev_hp = None
+        self.my_prev_hp = None
+        self.q_table = {}  # Q-table to store state-action pairs
+        self.default_q_value = 0
+        self.alpha = 0.1  # Learning rate
+        self.gamma = 0.9  # Discount factor
+        self.epsilon = 0.1  # Exploration rate
+
+    def get_state(self, battle):
+        """Get the current state representation."""
+        active_type = battle.active_pokemon.types[0] if battle.active_pokemon else "None"
+        opponent_type = battle.opponent_active_pokemon.types[0] if battle.opponent_active_pokemon else "None"
+        return (
+            battle.active_pokemon.species,
+            battle.opponent_active_pokemon.species,
+        )
+
+    def get_action_space(self, battle):
+        """Get all possible actions for the current state."""
+        actions = []
+        if battle.available_moves:
+            actions.extend(("move", move.id) for move in battle.available_moves)
+        if battle.available_switches:
+            actions.extend(("switch", pokemon.species) for pokemon in battle.available_switches)
+        return actions
+
+    def choose_action(self, state, action_space):
+        """Choose an action using ε-greedy policy."""
+        if random.uniform(0, 1) < self.epsilon:  # Exploration
+            return random.choice(action_space)
+        else:  # Exploitation
+            q_values = [(action, self.q_table.get((state, action), self.default_q_value)) for action in action_space]
+            return max(q_values, key=lambda x: x[1])[0]
+
+    async def choose_move(self, battle):
+        """Choose a move based on SARSA."""
+        # Get the current state
+        state = self.get_state(battle)
+
+        # Get the action space
+        action_space = self.get_action_space(battle)
+        if not action_space:
+            return self.choose_random_move(battle)  # Fallback if no valid actions
+
+        # Choose the current action
+        action = self.choose_action(state, action_space)
+
+        # Translate the action to an order
+        if action[0] == "move":
+            move = next(m for m in battle.available_moves if m.id == action[1])
+            move_order = self.create_order(move)
+        elif action[0] == "switch":
+            switch = next(p for p in battle.available_switches if p.species == action[1])
+            move_order = self.create_order(switch)
+
+        # Update the Q-table if this is not the first move
+        if self.last_state is not None and self.last_action is not None:
+            # Calculate the reward
+            reward = calculate_reward(
+                self.my_prev_hp,
+                battle.active_pokemon.current_hp,
+                self.opponent_prev_hp,
+                battle.opponent_active_pokemon.current_hp,
+                battle,
+            )
+
+            # Get the next state and next action
+            next_state = state
+            next_action = self.choose_action(next_state, action_space)
+
+            # SARSA update rule
+            current_q = self.q_table.get((self.last_state, self.last_action), self.default_q_value)
+            next_q = self.q_table.get((next_state, next_action), self.default_q_value)
+            self.q_table[(self.last_state, self.last_action)] = current_q + self.alpha * (
+                reward + self.gamma * next_q - current_q
+            )
+
+        # Save the current state and action for the next turn
+        self.last_state = state
+        self.last_action = action
+        self.opponent_prev_hp = battle.opponent_active_pokemon.current_hp
+        self.my_prev_hp = battle.active_pokemon.current_hp
 
         return move_order

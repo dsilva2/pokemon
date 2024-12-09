@@ -77,4 +77,4 @@ def generate_random_team():
     return formatted_team
 
 opponent_team = generate_random_team()
-print(opponent_team)
+# print(opponent_team)
