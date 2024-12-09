@@ -1,9 +1,5 @@
-import asyncio
 import random
-from helpers.helpers import QLearningPlayer, MaxDamagePlayer, RandomPlayer, save_q_table, q_table
-from agent_team import agent_team
 
-# Define the list of Pokémon for random team generation
 pokemon_list = [
     {
         "name": "Pidgeot",
@@ -53,7 +49,7 @@ pokemon_list = [
     {
         "name": "Poliwrath",
         "ability": "Water Absorb",
-        "moves": ["Waterfall", "Ice Punch", "Brick Break", "Bulk Up"]
+        "moves": ["Waterfall", "Ice Punch", "Close Combat", "Bulk Up"]
     },
     {
         "name": "Machamp",
@@ -68,7 +64,6 @@ pokemon_list = [
 ]
 
 def generate_random_team():
-    """Generates a random opponent team in the required format."""
     selected_pokemon = random.sample(pokemon_list, 6)
     formatted_team = ""
     for pokemon in selected_pokemon:
@@ -81,17 +76,5 @@ def generate_random_team():
         formatted_team += "\n"
     return formatted_team
 
-async def train_q_learning_agent(n_battles=1000):
-    for i in range(n_battles):
-        # Generate a new random opponent team for each battle
-        opponent_team = generate_random_team()
-
-        player = QLearningPlayer(battle_format="gen5ubers", team=agent_team)
-        opponent = RandomPlayer(battle_format="gen5ubers", team=opponent_team)
-        await player.battle_against(opponent, n_battles=1)
-
-    # Save Q-table after training
-    save_q_table(q_table, "q_table.txt")
-
-if __name__ == "__main__":
-    asyncio.run(train_q_learning_agent(n_battles=2000))
+opponent_team = generate_random_team()
+print(opponent_team)

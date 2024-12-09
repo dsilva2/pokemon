@@ -196,17 +196,15 @@ class QLearningPlayer(Player):
         self.last_action = None
         self.opponent_prev_hp = None
         self.my_prev_hp = None
+        self.num_switches = 0  # Tracks if the last action was a switch
 
     def get_state(self, battle):
-        """Create a representation of the current battle state, including type effectiveness."""
+        """Create a representation of the current battle state."""
         active_type = battle.active_pokemon.types[0] if battle.active_pokemon else "None"
         opponent_type = battle.opponent_active_pokemon.types[0] if battle.opponent_active_pokemon else "None"
-        # effectiveness = type_effectiveness.get(active_type, {}).get(opponent_type, 1)
-
         return (
             battle.active_pokemon.species,
             battle.opponent_active_pokemon.species,
-            # effectiveness,  # Include type effectiveness
         )
 
     async def choose_move(self, battle):
@@ -217,6 +215,18 @@ class QLearningPlayer(Player):
         # Get the action space
         action_space = get_action_space(battle)
 
+        # Filter out switch actions if the last action was also a switch
+        if self.num_switches > 2:
+            old_action_space = action_space
+            action_space = [action for action in action_space if action[0] != "switch"]
+            print(len(action_space), action_space, "\n\n\n\n\n\n\n\n\n\n")
+            # action_space = action_space if len(action_space) > 0 else old_action_space
+
+        # Fallback: If action_space is empty, repopulate it and reset last_was_switch
+        if not action_space:
+            action_space = get_action_space(battle)
+            self.last_was_switch = False  # Allow switching again as a fallback
+
         # Choose an action using ε-greedy policy
         action = choose_action(state, action_space, battle)
 
@@ -224,9 +234,12 @@ class QLearningPlayer(Player):
         if action[0] == "move":
             move = next(m for m in battle.available_moves if m.id == action[1])
             move_order = self.create_order(move)
+            self.last_was_switch = False  # Reset switch tracking
+            self.num_switches = 0
         elif action[0] == "switch":
             switch = next(p for p in battle.available_switches if p.species == action[1])
             move_order = self.create_order(switch)
+            self.num_switches += 1 # Update switch tracking
 
         # Update the Q-table if this is not the first move
         if self.last_state and self.last_action:
@@ -247,7 +260,6 @@ class QLearningPlayer(Player):
 
         return move_order
 
-    
 class MaxDamagePlayer(Player):
     def choose_move(self, battle):
         # Chooses a move with the highest base power when possible
@@ -268,6 +280,8 @@ class OptimalPolicyPlayer(Player):
     def __init__(self, q_table, **kwargs):
         super().__init__(**kwargs)
         self.q_table = q_table
+        self.num_switches = 0  # Tracks if the last action was a switch
+
 
     def get_state(self, battle):
         """Create a representation of the current battle state."""
@@ -282,6 +296,16 @@ class OptimalPolicyPlayer(Player):
         """Choose a move based on the optimal policy."""
         state = self.get_state(battle)
         action_space = get_action_space(battle)
+        if self.num_switches > 1:
+            old_action_space = action_space
+            action_space = [action for action in action_space if action[0] != "switch"]
+            # print(len(action_space), action_space, "\n\n\n\n\n\n\n\n\n\n")
+            # action_space = action_space if len(action_space) > 0 else old_action_space
+
+        # Fallback: If action_space is empty, repopulate it and reset last_was_switch
+        if not action_space:
+            action_space = get_action_space(battle)
+            self.last_was_switch = False
         # print('action space', action_space)
         # for ac in action_space:
         #     print(ac, self.q_table.get((state, ac), default_q_value))
@@ -292,8 +316,10 @@ class OptimalPolicyPlayer(Player):
         if action[0] == "move":
             move = next(m for m in battle.available_moves if m.id == action[1])
             move_order = self.create_order(move)
+            self.num_switches = 0
         elif action[0] == "switch":
             switch = next(p for p in battle.available_switches if p.species == action[1])
             move_order = self.create_order(switch)
+            self.num_switches += 1
 
         return move_order
