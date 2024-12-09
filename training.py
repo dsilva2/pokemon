@@ -86,7 +86,7 @@ async def train_q_learning_agent(n_battles=1000):
         # Generate a new random opponent team for each battle
         opponent_team = generate_random_team()
 
-        player = SarsaPlayer(battle_format="gen5ubers", team=agent_team)
+        player = QLearningPlayer(battle_format="gen5ubers", team=agent_team)
         opponent = RandomPlayer(battle_format="gen5ubers", team=opponent_team)
         await player.battle_against(opponent, n_battles=1)
 
